@@ -1,0 +1,8 @@
+{
+  "name": "coding-challenge-fullstack-1",
+  "version": "1.0.0",
+  "description": "Coding challenge for fullstack engineers",
+  "main": "index.js",
+  "author": "alexdaube <alexdaube@gmail.com>",
+  "license": "MIT"
+}
