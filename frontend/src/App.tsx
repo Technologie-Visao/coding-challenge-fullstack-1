@@ -1,35 +1,112 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useState } from 'react';
+import reactLogo from './assets/react.svg';
+import viteLogo from '/vite.svg';
+import './App.css';
 
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+interface Texture {
+  name: string;
+  description: string;
+  thumbnail_url: string;
 }
 
-export default App
+function App() {
+  const [search, setSearch] = useState('');
+  const [suggestions, setSuggestions] = useState<Texture[]>([]);
+  const [selected, setSelected] = useState<number>(-1);
+  const [noSuggestions, setNoSuggestions] = useState<boolean>(false);
+  const [limit, setLimit] = useState<number>(5);
+
+  useEffect(() => {
+    const fetchSuggestions = async () => {
+      if (search.length >= 2) {
+        const response = await fetch(
+          `http://localhost:5000/textures/suggestions?search=${search}&limit=${limit}`,
+        );
+        const data = await response.json();
+        if (response.ok) {
+          setSuggestions(data);
+          setNoSuggestions(data.length === 0);
+        }
+      } else {
+        setSuggestions([]);
+        setNoSuggestions(false);
+      }
+    };
+    fetchSuggestions();
+  }, [search]);
+
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearch(event.target.value);
+    setSelected(-1);
+  };
+
+  const handleLimitChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = Number(event.target.value);
+    if (value >= 0 || value === undefined) {
+      setLimit(value);
+    }
+  };
+
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Enter' && selected !== -1) {
+      setSearch(suggestions[selected]?.name);
+    } else if (event.key === 'ArrowUp' && selected > 0) {
+      setSelected(selected - 1);
+    } else if (event.key === 'ArrowDown' && selected < suggestions.length - 1) {
+      setSelected(selected + 1);
+    }
+  };
+
+  const handleSuggestionClick = (index: number) => {
+    setSearch(suggestions[index].name);
+    setSelected(index);
+  };
+
+  return (
+    <div className="mainPage">
+      <h2>Start typing to find a texture</h2>
+      <div className="inputs">
+        <label>
+          Limit of elements to show :
+          <input
+            id="limit-input"
+            type="number"
+            value={limit}
+            onChange={handleLimitChange}
+            className="limitInput"
+            min="0"
+          />
+        </label>
+
+        <input
+          type="text"
+          value={search}
+          onChange={handleInputChange}
+          onKeyDown={handleKeyDown}
+          className="autocompleteInput"
+        />
+      </div>
+      {noSuggestions ? (
+        <div>No suggestions found.</div>
+      ) : (
+        <ul className="list">
+          {suggestions.map((suggestion, index) => (
+            <li
+              key={index}
+              onClick={() => handleSuggestionClick(index)}
+              className={index === selected ? 'selected' : ''}
+            >
+              <img src={suggestion.thumbnail_url} alt={suggestion.name} />
+              <div>
+                <div>{suggestion.name}</div>
+                <div>{suggestion.description.slice(0, 50)}...</div>
+              </div>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+}
+
+export default App;

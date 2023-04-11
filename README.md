@@ -1,4 +1,20 @@
 # Visao Coding Challenge
+
+## installation
+### backend
+The backend is in Python3. You'll need flask and flask-cors:
+
+`pip install flask` and `pip install flask-cors`
+
+To start the backend, make sure the port 5000 is not used and run it with the following command:
+
+`python3 api.php`
+
+### frontend
+As the instructions bellow indicate, make sure you have node and yarn installed. To start the frontend, use the following command:
+
+`yarn run vite`
+
 ## Instructions
 Design an API(backend) which serves suggestions of textures and a web page(frontend) 
 which includes an autocomplete component to search them.

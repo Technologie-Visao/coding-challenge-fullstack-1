@@ -1,7 +1,9 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import json
 
 app = Flask(__name__)
+CORS(app)
 
 with open('data.json') as file:
     data = json.load(file)
@@ -16,9 +18,10 @@ def scoreSearch(result, searchTerm):
 
 @app.route('/textures/suggestions')
 def getSuggestions():
+    if 'search' and 'limit' not in request.args:
+        return "Bad request", 400
     search = request.args.get('search')
     limit = int(request.args.get('limit'))
-    #TODO: if one of the parameters is missing, return an error code (probably 422)
 
     suggestions = []
     for item in data:
