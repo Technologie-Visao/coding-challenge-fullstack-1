@@ -1,9 +1,11 @@
 from flask import Flask, jsonify, request
+from flask_cors import CORS
 import json
 import textdistance
 
 
 app = Flask(__name__)
+CORS(app)
 
 def get_texture_suggestions(search_term, limit=5):
     # Load texture data from JSON file
@@ -21,7 +23,8 @@ def get_texture_suggestions(search_term, limit=5):
         position = name.find(search_term.lower())
         weight = distance + (1 - position / len(name))
         # Add texture name and weight to list of weighted textures
-        weighted_textures.append({'name': texture['name'], 'weight': weight})
+        texture['weight'] = weight
+        weighted_textures.append(texture)
 
     # Filter textures based on search term
     filtered_textures = [texture for texture in weighted_textures if search_term.lower() in texture['name'].lower()]
