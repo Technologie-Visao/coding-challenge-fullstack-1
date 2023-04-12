@@ -18,8 +18,10 @@ and another empty project(backend folder) which only includes a JSON data file f
      - Reach for any external UI components. We want to see you build.
    - Feel free to:
      - Create additional React components
-     - Use any non-UI npm packages with baked in autocomplete component
-     - You can take as long as you like to complete this project,
+     - Use any npm packages that are not UI component libraries(MUI, AntD, Bootstrap, etc...)
+     - You can take as long as you like to complete this project
+     - Inspire yourself from the web(dribbble, pinterest, etc...) to deliver a beautiful UI.
+Make sure to reference it in your pull request. 
 but we'd like you to keep track of much time you spend
 3. Once finished, push your changes and open a pull request with:
    - How much time you spent
@@ -54,9 +56,9 @@ to find the best suggestions possible
 
 ### Frontend
 Design an autocomplete component which and will show suggested textures
-- As text is typed into the component's input, a list of textures should render above/below it
+- As text is being typed into the component's input, a list of textures should render above/below it
 - Suggestions must fetched from the api you designed
-- Limit the suggestions to 5 items
+- Limit the number of suggestions fetched. For example, only show 5 items in the suggestion box.
 - Suggested textures should contain the thumbnail, the name and part of the description
 - The list items should be selectable by mouse click or hitting the enter key.
 - The list of suggestions should NOT show when the input is less than two characters.
