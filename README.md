@@ -9,7 +9,9 @@
 ```run.sh``` launches Vite.
 
 #### Option 2
-Change directory to ```backend``` and ```uvicorn api:app --reload``` to start API once packages are installed with your favourite package manager.
+Change directory to ```backend``` and ```uvicorn api:app --reload``` to start API once packages are installed with your favourite package manager. 
+
+In the event you get `[Errno 48] Address already in use` from FastAPI if you start/stop the server for any reason, `lsof -i :8000` will list process IDs you should kill with `kill <put PID here without angle brackets>` 
 
 ```yarn dev``` in after changing directories to `frontend/src`.
 
