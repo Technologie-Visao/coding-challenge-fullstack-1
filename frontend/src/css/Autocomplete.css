@@ -1,0 +1,134 @@
+#autocomplete-content {
+  padding: 2rem;
+  height: calc(100vh - 4rem);
+  overflow-y: scroll;
+}
+@media screen and (max-width: 991px) {
+  #autocomplete-content {
+    padding: 1rem;
+    height: 100%;
+    min-height: calc(100vh - 2rem);
+  }
+}
+
+#autocomplete-content-wrapper {
+  display: grid;
+  grid-template-rows: 2rem fit-content(100%) auto 1fr;
+  align-items: center;
+  justify-items: center;
+  gap: 1rem;
+  height: 100%;
+}
+
+#message {
+  font-size: max(1.2rem, 1.2vw);
+  mix-blend-mode: overlay;
+  text-align: center;
+}
+
+#user-input {
+  width: 90%;
+  height: 3rem;
+  border-radius: 10px;
+  padding: 0.5rem 2rem;
+  font-weight: 700;
+  text-align: center;
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  font-size: max(1.5rem, 2vw);
+  color: rgba(var(--black));
+  background: rgba(var(--white));
+  margin-bottom: 2rem;
+  outline: rgba(var(--purple)) 2px solid;
+  mix-blend-mode: overlay;
+}
+@media screen and (max-width: 991px) {
+  #user-input {
+    width: 90%;
+    padding: 0.5rem 1rem;
+  }
+}
+#user-input::placeholder {
+  color: rgba(var(--black));
+}
+#user-input:focus::placeholder {
+  color: rgba(var(--black), 0.3);
+}
+
+#selection.active {
+  display: grid;
+  grid-template-columns: 1fr fit-content(100%);
+  align-items: center;
+  gap: 1rem;
+  width: 90%;
+  cursor: pointer;
+}
+#selection.active #delete {
+  font-size: 1rem;
+  mix-blend-mode: overlay;
+  padding: 0.5rem;
+}
+
+#selection.empty {
+  display: none;
+}
+
+#suggestions {
+  height: 100%;
+  width: 90%;
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  align-items: center;
+  grid-gap: 1rem;
+}
+@media screen and (max-width: 991px) {
+  #suggestions {
+    grid-template-rows: repeat(5, fit-content(100%));
+  }
+}
+
+.suggestion {
+  padding: 1rem 0;
+  border-radius: 10px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  overflow: hidden;
+}
+@media screen and (max-width: 991px) {
+  .suggestion {
+    padding: 1rem;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    background: rgba(var(--white), 0.1);
+    border: 1px solid rgba(var(--white), 0.3);
+    overflow: visible;
+  }
+}
+
+.suggestion-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  color: rgba(var(--white));
+  width: 100%;
+  mix-blend-mode: overlay;
+  cursor: pointer;
+}
+.suggestion-text .suggestion-name {
+  font-weight: 700;
+  font-size: max(1.5rem, 2vw);
+}
+
+.suggestion-img {
+  display: flex;
+  align-items: center;
+}
+.suggestion-img img {
+  height: 80px;
+}
+
+/*# sourceMappingURL=Autocomplete.css.map */

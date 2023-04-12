@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --blue: 13, 40, 80; // #0d2850
+  --purple: 148, 57, 230; // #9439e6
+  --white: 245, 245, 245; // #f5f5f5
+  --black: 51, 51, 51; // #333333
+}
+
+body {
+  font-family: 'Poppins', 'sans-serif';
+  font-weight: 400;
+  font-size: 1.5rem;
+  overflow-x: hidden;
+  background: rgba(var(--white));
+
+  // firefox scrollbars
+  scrollbar-width: thin;
+  scrollbar-color: rgba(var(--black), 0.3) rgba(var(--purple));
+
+  // chrome scrollbars
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(var(--purple));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(var(--black), 0.3);
+  }
+}
+
+.App {
+  background: linear-gradient(75deg, rgba(var(--blue)), rgba(var(--purple)));
+  color: rgba(var(--white));
+  position: relative;
+  z-index: 1;
+}
+
+.App::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url('https://images.unsplash.com/photo-1594734415578-00fc9540929b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80');
+  background-repeat: no-repeat;
+  background-position: center;
+  mix-blend-mode: overlay;
+  opacity: 0.2;
+  z-index: -1;
+  animation: texture-move 10s ease-in-out infinite alternate;
+}
+
+@keyframes texture-move {
+  0% {
+    filter: contrast(100%) blur(10px);
+    background-size: 250%;
+  }
+  100% {
+    filter: contrast(80%) brightness(1.2) blur(0);
+    background-size: 200%;
+  }
+}

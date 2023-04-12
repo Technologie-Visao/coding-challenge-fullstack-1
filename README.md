@@ -1,64 +1,55 @@
 # Visao Coding Challenge
-## Instructions
-Design an API(backend) which serves suggestions of textures and a web page(frontend) 
-which includes an autocomplete component to search them.
-We have provided you with a skeleton React/Typescript project(frontend folder)
-and another empty project(backend folder) which only includes a JSON data file for the textures.
+### Solved by François Boulay-Handfield 
+#### 2023-04-12
 
-1. Get your environment set up.
-   - [Fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) this repo
-   - Make sure node.js and yarn are installed for the frontend project
-2. For the code:
-   - We are looking for:
-     - A finished product that meets the specs
-     - Code readability and simplicity
-     - Best practices around React components, frontend styling and backend apis
-     - You to showcase your skill
-   - Please don't:
-     - Reach for any external UI components. We want to see you build.
-   - Feel free to:
-     - Create additional React components
-     - Use any non-UI npm packages with baked in autocomplete component
-     - You can take as long as you like to complete this project,
-but we'd like you to keep track of much time you spend
-3. Once finished, push your changes and open a pull request with:
-   - How much time you spent
-   - Any thoughts or extra context you want to provide about your code
-   - Any thoughts or reflections you have about the project requirements
+## Run Server
+#### Option 1
+```install.sh``` creates a Python virtual environment and installs necessary packages for FastAPI. In the event you'd like to quench your curiosity pertaining to packages to be installed, you can find more information below.
 
-### Backend
-Design an API endpoint that provides autocomplete suggestions for many textures.
-- Setup the backend project
-  - Provide the information to run it in the readme. Package installation, start command, port, etc...
-  - Use either Python(what we use in our backend) or node.js as the language of choice
-  - Use the backend framework of your choice
-- Create an API endpoint must be exposed at `/textures/suggestions`
-  - Use a query string parameter to pass the search term
-  - Use a query string parameter to provide a limit of items that can be suggested
-  - Based on the search term, 
-use your imagination to apply a weight/score to find the best possible matches 
-to find the best suggestions possible 
-  - Should return a JSON response with an array of suggested textures
-    - The suggestions should be sorted by descending weight(best match)
-    - Return the number of suggestions corresponding to the limit parameter provided
-    - Should follow this format
-    ```
-    [
-      {
-      "name": "Rustic Metal Texture",
-      "description": "This free 3D texture features a rustic metal look, perfect for industrial scenes and settings.",
-      "thumbnail_url": "https://example.com/textures/rustic_metal.jpg"
-      }
-    ]
-    ```
+```run.sh``` launches Vite.
 
-### Frontend
-Design an autocomplete component which and will show suggested textures
-- As text is typed into the component's input, a list of textures should render above/below it
-- Suggestions must fetched from the api you designed
-- Limit the suggestions to 5 items
-- Suggested textures should contain the thumbnail, the name and part of the description
-- The list items should be selectable by mouse click or hitting the enter key.
-- The list of suggestions should NOT show when the input is less than two characters.
-- Display a message when no suggestions are found
-- The design should be mobile friendly
+#### Option 2
+Change directory to ```backend``` and ```uvicorn api:app --reload``` to start API once packages are installed with your favourite package manager.
+
+```yarn dev``` in after changing directories to `frontend/src`.
+
+## Backend 
+
+#### FastAPI
+[FastAPI](https://pypi.org/project/fastapi/) is a modern, fast (high-performance), web framework for building APIs with Python 3.6+ based on standard Python type hints.
+
+#### Uvicorn
+[uvicorn](https://pypi.org/project/uvicorn/) is a lightning-fast ASGI server implementation, using uvloop and httptools. It's a great tool for running FastAPI.
+
+#### Starlette
+[Starlette](https://pypi.org/project/starlette/) is a lightweight ASGI framework/toolkit, which is used by FastAPI.
+
+#### Dotenv
+[python-dotenv](https://pypi.org/project/python-dotenv/) is a tool for loading environment variables from a ```.env``` file.
+
+### Overview
+Libraries are imported and middleware sets up CORS. Cache-Control headers caches responses for 1 day. Root has a friendly message requesting that you go to GET /textures/suggestions
+
+```get_suggestions``` has 2 implementations; 
+1. One reading directly from ```data.json```
+2. One reading from a database I proactively developed for this assignment in order to prove my skills. Queries are read from the ```.env``` file. I pushed both on Github despite being security vulnerabilities outside assignments.
+
+Query params `search_term` and `limit` are implemented.
+
+My scoring algorithm grades input value found in the name 5 points, and 1 point for value found in description.
+
+## Frontend
+
+#### Installation
+In the event you do not have SASS installed
+
+`yarn add sass`
+`npm install sass`
+
+#### Overview
+I like what I built and am excited to hear about your review, and how you see me snowball from here. 
+
+Searching for a texture returns relevant results. User-friendly messages are above the input. Upon clicking on one of the results, it is stickied under the input with the option to remove it.
+
+# Thank you Alex!
+#### François
