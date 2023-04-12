@@ -1,4 +1,23 @@
 # Visao Coding Challenge
+
+## Challenge Submission by Carbuccia-Donoso Dimsy
+### Backend
+   1. Environment set up.
+   - Navigate to the backend folder
+   - Create a virtual environment and activate it:
+   ```
+      python -m venv env
+      source env/bin/activate    # for Linux/MacOS
+      env\Scripts\activate      # for Windows
+   ```
+- Install the required packages:```pip install -r requirements.txt```
+- Start the API by running the following command:```python app.py```
+### Frontend
+   - Navigate to the project directory in your terminal.
+   - Run ```npm install``` to install the project dependencies.
+   - Run ```npm run dev``` to start the development server.
+   - Open http://localhost:5173 in your web browser to view the app.
+
 ## Instructions
 Design an API(backend) which serves suggestions of textures and a web page(frontend) 
 which includes an autocomplete component to search them.
