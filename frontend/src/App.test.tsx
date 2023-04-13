@@ -1,8 +1,9 @@
-import { render, screen } from '@testing-library/react';
 import App from '~/App';
+import { findByText, render, screen } from './tests/test-utils';
 
 describe('App', () => {
   it('renders', async () => {
     render(<App />);
+    expect(await screen.findByText('test')).toBeVisible();
   });
 });

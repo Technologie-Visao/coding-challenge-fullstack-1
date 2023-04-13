@@ -12,3 +12,11 @@ For testing and test coverage:
 npm test
 npm run coverage
 ```
+
+# References
+
+[Vitest](https://vitest.dev/)
+
+[RTK Query](https://redux-toolkit.js.org/rtk-query/overview)
+
+[Mock Service Worker](https://mswjs.io/)
