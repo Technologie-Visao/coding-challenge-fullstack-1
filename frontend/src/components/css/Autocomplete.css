@@ -1,0 +1,113 @@
+#autocomplete-cont {
+    background-color: rgba(255,255,255,1);
+    border-radius: 10px;
+    width: min(95%, 600px);
+    margin: 0 15px;
+    padding: 15px 0px;
+    box-sizing: border-box;
+}
+
+#autocomplete-search {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: rgb(120,120,120);
+}
+#autocomplete-search i {
+    font-size: 24px;
+}
+#autocomplete-search > input {
+    width: 50%;
+    margin: 0 10px;
+    border: none;
+    font-size: 24px;
+    color: black;
+}
+#autocomplete-search > input:focus {
+    outline: none;
+}
+
+#autocomplete-search > p:hover {
+    cursor: pointer;
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+
+
+.settings-dropdown {
+    position: relative;
+    display: inline-block;
+}
+.settings-dropdown > i {
+    font-size: 20px!important;
+    transition: transform 0.35s linear;
+}
+.settings-dropdown > i:hover {
+    transform: rotate(90deg);
+}
+.settings-dropdown > i:hover{
+    cursor: pointer;
+    opacity: 0.8;
+}
+.settings-dropdown-content {
+    opacity: 0;
+    text-align: center;
+    background-color: rgba(255,255,255,1);
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+    left: -130px;
+    border-radius: 10px;
+    transition: all 0.3s step-end;
+}
+.settings-dropdown-content > p {
+    margin-bottom: 10px;
+}
+.settings-dropdown:hover .settings-dropdown-content {
+    opacity: 1;
+    text-align: center;
+}
+
+
+
+
+#autocomplete-results {
+    width: 100%;
+    max-height: 0px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    transition: max-height 0.4s linear;
+}
+#autocomplete-results.not-empty {
+    max-height: 450px;
+    margin-top: 20px;
+}
+
+.autocomplete-result {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: rgb(120,120,120);
+    padding: 5px;
+}
+.autocomplete-result.selected {
+    background-color: rgba(200,200,200,0.4);
+}
+.autocomplete-result:hover {
+    cursor: pointer;
+}
+.autocomplete-result > img {
+    margin: 0 10px;
+    height: 70px;
+    width: 70px;
+    border-radius: 5px;
+}
+.autocomplete-result h4 {
+    font-weight: 600;
+    color: black;
+}
