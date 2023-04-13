@@ -1,6 +1,7 @@
 const request = require('supertest')
 const app = require('../src/app.js')
 
+// Tests for simple sanity checks
 describe('App', () => {
   test('responds with a default message', async () => {
     const response = await request(app).get('/')

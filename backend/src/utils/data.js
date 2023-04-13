@@ -8,6 +8,7 @@ const fileName = 'data.json'
 // read json file
 const filePath = path.join(dataDirectory, fileName)
 const rawdata = fs.readFileSync(filePath)
+
 // parse json
 const data = JSON.parse(rawdata)
 

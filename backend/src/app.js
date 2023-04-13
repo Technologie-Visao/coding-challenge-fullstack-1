@@ -7,9 +7,8 @@ const app = express()
 
 // routes
 app.get('/', (req, res) => {
-  res.send(data)
+  res.send('Hello there!')
 })
-
 app.use('/textures/suggestions', suggestionsRouter)
 
 module.exports = app

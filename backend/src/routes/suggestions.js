@@ -1,10 +1,8 @@
 const express = require('express')
-const { data } = require('../utils/data')
+const { searchSuggestions } = require('../controllers/suggestionsController')
 
 const router = express.Router()
 
-router.get('/', (req, res) => {
-  res.send(data)
-})
+router.get('/', searchSuggestions)
 
 module.exports = router
