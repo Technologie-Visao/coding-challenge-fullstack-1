@@ -10,6 +10,11 @@
     "test-watch": "jest --watchAll",
     "coverage": "jest --coverage"
   },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "./tests/utils/setup.js"
+    ]
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {

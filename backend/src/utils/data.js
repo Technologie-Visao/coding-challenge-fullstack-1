@@ -2,7 +2,7 @@ const fs = require('fs')
 const path = require('path')
 
 // setttings
-const dataDirectory = path.join(__dirname, '../../data')
+const dataDirectory = path.join(__dirname, '..', '..', 'data') // use __dirname so that it doesn't matter from where you run npm start
 const fileName = 'data.json'
 
 // read json file

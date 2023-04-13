@@ -1,6 +1,5 @@
 const express = require('express')
 const suggestionsRouter = require('./routes/suggestions')
-const { data } = require('./utils/data')
 
 // init
 const app = express()

@@ -1,6 +1,6 @@
-const { data } = require('./data')
-
 // helper methods to mimic database methods such as .findById()
+
+const { data } = require('./data')
 
 /**
  * Get all suggestions
@@ -12,5 +12,6 @@ function getAll({ limit } = {}) {
   return data.slice(0, limit)
 }
 
+// export
 const database = { getAll }
 module.exports = database
