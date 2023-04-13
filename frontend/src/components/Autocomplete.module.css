@@ -1,0 +1,9 @@
+.autocomplete {
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .autocomplete {
+    width: 100%;
+  }
+}

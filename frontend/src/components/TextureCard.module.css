@@ -1,0 +1,92 @@
+.card {
+  background-color: #444;
+  border-radius: 0.4rem;
+  padding: 1.6rem;
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  box-shadow: 0 0.4rem 0.6rem rgba(0, 0, 0, 0.1);
+  margin-top: 4rem;
+}
+
+.imageColumn {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.detailsColumn {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  font-size: 2.4rem;
+  margin: 0;
+}
+
+.descriptionRow {
+  display: flex;
+  align-items: flex-start;
+}
+
+.description {
+  font-size: 1.6rem;
+}
+
+.removeButton {
+  position: absolute;
+  top: 0.8rem;
+  right: 0.8rem;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.removeButton:hover {
+  color: #ff6961;
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .imageColumn {
+    width: 100%;
+    margin-bottom: 1.6rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .image {
+    width: 100%;
+    max-width: 30rem;
+  }
+
+  .titleRow {
+    justify-content: center;
+  }
+
+  .detailsColumn {
+    width: 100%;
+    text-align: center;
+  }
+}
