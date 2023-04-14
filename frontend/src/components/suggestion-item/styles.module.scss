@@ -1,0 +1,8 @@
+.suggestion-item {
+  background-color: lightgreen;
+  border: 1px solid;
+
+  &:hover {
+    background-color: blue;
+  }
+}

@@ -3,9 +3,10 @@ import styles from './styles.module.scss';
 
 type SuggestionListProps = {
   suggestions: SearchedSuggestion[];
+  onSelected?: (suggestion: SearchedSuggestion) => void;
 };
 
-function SuggestionList({ suggestions }: SuggestionListProps) {
+function SuggestionList({ suggestions, onSelected }: SuggestionListProps) {
   return (
     <ul>
       {suggestions.map((suggestion) => (
@@ -13,6 +14,7 @@ function SuggestionList({ suggestions }: SuggestionListProps) {
         <SuggestionItem
           key={suggestion.thumbnail_url}
           suggestion={suggestion}
+          onSelected={onSelected}
         />
       ))}
     </ul>

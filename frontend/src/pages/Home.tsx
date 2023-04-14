@@ -1,3 +1,4 @@
+import Header from '~/components/header/Header';
 import Loading from '~/components/loading/Loading';
 import SearchBar from '~/components/search-bar/SearchBar';
 import SuggestionList from '~/components/suggestion-list/SuggestionList';
@@ -10,7 +11,7 @@ function Home() {
 
   return (
     <>
-      <SearchBar />
+      <Header />
     </>
   );
 }
