@@ -18,6 +18,7 @@ const Autocomplete: React.FC<AutocompleteProps> = ({
 }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [suggestions, setSuggestions] = useState<Suggestion[]>([]);
+  const [selectedSuggestionIndex, setSelectedSuggestionIndex] = useState(-1);
 
   useEffect(() => {
     if (searchTerm.length >= 1) {
@@ -33,6 +34,16 @@ const Autocomplete: React.FC<AutocompleteProps> = ({
     }
   }, [searchTerm]);
 
+  const handleSuggestionClick = (suggestion: Suggestion) => {
+    setSearchTerm(suggestion.name);
+  };
+
+  const handleKeyDown = (event: React.KeyboardEvent) => {
+    if (event.key === 'Enter' && selectedSuggestionIndex > -1) {
+      handleSuggestionClick(suggestions[selectedSuggestionIndex]);
+    }
+  };
+
   return (
     <div>
       <input
@@ -40,11 +51,17 @@ const Autocomplete: React.FC<AutocompleteProps> = ({
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
         placeholder={placeholder}
+        onKeyDown={handleKeyDown}
       />
       {suggestions.length > 0 && (
         <ul>
           {suggestions.map((suggestion: Suggestion, index: number) => (
-            <li key={index}>
+            <li
+              key={index}
+              onClick={() => handleSuggestionClick(suggestion)}
+              onMouseEnter={() => setSelectedSuggestionIndex(index)}
+              onMouseLeave={() => setSelectedSuggestionIndex(-1)}
+            >
               <img
                 src={suggestion.thumbnail_url}
                 alt={suggestion.name}
