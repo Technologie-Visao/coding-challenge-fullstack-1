@@ -23,10 +23,11 @@ class TextureSuggester():
     def get_score(self, i_words: list[str], d_words: list[str], multiplier: int = 1) -> int:
         """
         Computes the score of matching words between two lists of strings.
+        First an exact match is search for (2X multiplier), then check for substrings both ways.
         Args:
             i_words (list[str]): A list of input words to be matched.
             d_words (list[str]): A list of reference words to match against.
-            multiplier (int, optional): A multiplier value to apply to matching scores. Defaults to 1.
+            multiplier (int, optional): A multiplier value to apply to matching scores. (1X) for description and (5X) for name.
         Returns:
             int: The final matching score.
         """
@@ -47,6 +48,7 @@ class TextureSuggester():
     def get_suggestions(self, input: str, limit: int) -> list[dict]:
         """
         Retrieves a list of dictionary objects that match a given input string.
+        Both Name and Description string matches are evaluated, (5X) multiplier for name matches
         Args:
             input (str): The input string to match against.
             limit (int): The maximum number of matches to return.
