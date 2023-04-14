@@ -1,4 +1,22 @@
 # Visao Coding Challenge
+
+## How to run
+
+### Backend
+- `cd backend`
+- Setup and start virtual environment
+- `pip install -r requirements.txt`
+- `python app.py`
+- API will be running on http://127.0.0.1:5000
+
+### Frontend
+- `cd frontend`
+- `yarn install`
+- `yarn run dev`
+- Application will be running on http://localhost:5173/
+
+
+
 ## Instructions
 Design an API(backend) which serves suggestions of textures and a web page(frontend) 
 which includes an autocomplete component to search them.
