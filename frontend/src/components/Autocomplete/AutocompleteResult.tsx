@@ -25,12 +25,13 @@ const AutocompleteResult = ({t, i, currentListItem, handleSelect, setCurrentList
         <li 
             key={`${t.name}-${i}`} 
             className={currentListItem == i ?"autocomplete-result selected":"autocomplete-result"} 
+            data-testid={"autocomplete-result"}
             onClick={handleSelect} 
             onMouseOver={() =>setCurrentListItem(i)}>
             <img src={t.thumbnail_url}/>
             <div>
                 <h4>{t.name}</h4>
-                <p>{limitDescriptionText(t.description)}</p>
+                <p data-testid={"autocomplete-result-desc"}>{limitDescriptionText(t.description)}</p>
             </div>
         </li>
     )

@@ -111,10 +111,10 @@ const Autocomplete = () => {
 
 
     return (
-        <div id="autocomplete-cont">
+        <div id="autocomplete-cont" data-testid={"autocomplete-cont"}>
 
             {/* Search bar and limit settings */}
-            <div id="autocomplete-search">
+            <div id="autocomplete-search" data-testid={"autocomplete-search"}>
                 <div>
                     <i className={loading ? "fa-solid fa-spinner fa-spin":"fa-solid fa-magnifying-glass"}/>
                     <span>{loading ?"loading":"textures"}</span>
@@ -124,14 +124,14 @@ const Autocomplete = () => {
                 <div className="settings-dropdown">
                     <i className="fa-solid fa-gear"/>
                     <div className="settings-dropdown-content">
-                        <p># of suggestions: {limit}</p>
+                        <p data-testid={"autocomplete-limit"}># of suggestions: {limit}</p>
                         <input type="range" defaultValue={limit} min={1} max={25} onChange={e => handleLimitChange(e)}/>
                     </div>
                 </div>
             </div>
 
             {/* Search results */}
-            <ul id="autocomplete-results" className={(textures.length > 0 && !hide) ? "not-empty":"empty"}>
+            <ul data-testid={"autocomplete-results"} id="autocomplete-results" className={(textures.length > 0 && !hide) ? "not-empty":"empty"}>
                 {textures.length > 0 && textures.map((t, i) =>
                     <AutocompleteResult 
                         key={`${t.name}-${i}`} 
