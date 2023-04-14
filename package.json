@@ -4,5 +4,8 @@
   "description": "Coding challenge for fullstack engineers",
   "main": "index.js",
   "author": "alexdaube <alexdaube@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "bootstrap-ci": "npm ci && npm ci --prefix backend && npm ci --prefix frontend"
+  }
 }
