@@ -1,35 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import {SafeAreaView, StyleSheet} from 'react-native';
+import SearchPage from "./pages/search/SearchPage";
+import AppHeader from "./components/header/AppHeader";
+import AppFooter from "./components/footer/AppFooter";
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+    <SafeAreaView style={styles.container}>
+      <AppHeader/>
+      <SearchPage/>
+      <AppFooter/>
+    </SafeAreaView>
+  );
 }
 
-export default App
+export default App;
+
+const styles = StyleSheet.create({
+  text: {
+    color: '#ffffff',
+    marginBottom: 16,
+  },
+  container: {
+    backgroundColor: '#F0F0F0',
+    minHeight: '100vh',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'stretch',
+    justifyContent: 'center',
+    width: '100%',
+  },
+});
+
