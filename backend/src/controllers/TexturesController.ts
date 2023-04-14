@@ -31,8 +31,8 @@ export class TexturesController {
         // Weights textures based on provided term
         const weightedTextures = filteredTextures.map((texture: Texture): Texture => {
             let weight = 0;
-            if (!!term && texture.name.includes(term)) weight += 1;
-            if (!!term && texture.description.includes(term)) weight += 2;
+            if (!!term && texture.name.includes(term)) weight += 2;
+            if (!!term && texture.description.includes(term)) weight += 1;
 
             return {
                 ...texture,
