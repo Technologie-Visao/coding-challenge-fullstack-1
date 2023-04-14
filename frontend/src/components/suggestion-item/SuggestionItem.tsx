@@ -1,5 +1,5 @@
 type SuggestionItemProps = {
-  suggestion: Suggestion;
+  suggestion: SearchedSuggestion;
 };
 
 function SuggestionItem({ suggestion }: SuggestionItemProps) {
@@ -7,6 +7,7 @@ function SuggestionItem({ suggestion }: SuggestionItemProps) {
     <li>
       <h1>{suggestion.name}</h1>
       <p>{suggestion.description}</p>
+      <p>{suggestion.score}</p>
       <img src={suggestion.thumbnail_url} />
     </li>
   );

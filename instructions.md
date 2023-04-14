@@ -59,10 +59,10 @@ Design an API endpoint that provides autocomplete suggestions for many textures.
 
 ### Frontend
 
-Design an autocomplete component which and will show suggested textures
+Design an autocomplete component which will show suggested textures
 
 - As text is being typed into the component's input, a list of textures should render above/below it
-- Suggestions must fetched from the api you designed
+- Suggestions must be fetched from the api you designed
 - Limit the number of suggestions fetched. For example, only show 5 items in the suggestion box.
 - Suggested textures should contain the thumbnail, the name and part of the description
 - The list items should be selectable by mouse click or hitting the enter key.

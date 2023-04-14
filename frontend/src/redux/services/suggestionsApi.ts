@@ -1,6 +1,11 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import config from '~/config/config';
 
+type SearchQuery = {
+  search: string;
+  limit?: number;
+};
+
 // service for the suggestions api
 export const suggestionsApi = createApi({
   reducerPath: 'suggestionsApi',
@@ -13,7 +18,14 @@ export const suggestionsApi = createApi({
     suggestions: builder.query<Suggestion[], void>({
       query: () => ({ url: '/' }),
     }),
+    // Search suggestions
+    searchSuggestions: builder.query<SearchedSuggestion[], SearchQuery>({
+      query: ({ search, limit = 5 }) => ({
+        url: `/?search=${search}&limit=${limit}`,
+      }),
+    }),
   }),
 });
 
-export const { useSuggestionsQuery } = suggestionsApi;
+export const { useSuggestionsQuery, useSearchSuggestionsQuery } =
+  suggestionsApi;

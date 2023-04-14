@@ -2,12 +2,12 @@ import SuggestionItem from '../suggestion-item/SuggestionItem';
 import styles from './styles.module.scss';
 
 type SuggestionListProps = {
-  suggestions: Suggestion[];
+  suggestions: SearchedSuggestion[];
 };
 
 function SuggestionList({ suggestions }: SuggestionListProps) {
   return (
-    <ul className={styles.test}>
+    <ul>
       {suggestions.map((suggestion) => (
         // Granite is used twice, so I use the thumbnail as the key
         <SuggestionItem

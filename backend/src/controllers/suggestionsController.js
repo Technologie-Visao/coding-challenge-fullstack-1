@@ -7,9 +7,9 @@ const database = require('../utils/database')
  */
 function searchSuggestions(req, res) {
   // query parameters
-  const { limit } = req.query
+  const { limit, search } = req.query
   // get data
-  const data = database.getAll({ limit })
+  const data = database.getAll({ limit, search })
   res.send(data)
 }
 

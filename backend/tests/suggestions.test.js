@@ -20,4 +20,25 @@ describe('Suggestions', () => {
     expect(response.statusCode).toBe(200)
     expect(response.body.length).toBe(limit)
   })
+
+  test('no suggestions found', async () => {
+    const response = await request(app).get(
+      `/textures/suggestions/?search=Random&limit=5`
+    )
+    expect(response.body).toEqual([])
+  })
+
+  test('empty search', async () => {
+    const response = await request(app).get(
+      `/textures/suggestions/?search=&limit=5`
+    )
+    expect(response.body).toEqual([])
+  })
+
+  test('suggestions found', async () => {
+    const response = await request(app).get(
+      `/textures/suggestions/?search=Description&limit=5`
+    )
+    expect(response.body.length).toBeGreaterThan(0)
+  })
 })
