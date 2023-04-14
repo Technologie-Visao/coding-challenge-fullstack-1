@@ -29,3 +29,5 @@ Temporary Items
 # VSCode files
 .vscode/
 package-lock.json
+*.pyc
+backend/.env
