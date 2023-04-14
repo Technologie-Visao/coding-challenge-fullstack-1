@@ -45,7 +45,7 @@ class TextureSuggester():
         return score
         
 
-    def get_suggestions(self, input: str, limit: int) -> list[dict]:
+    def get_suggestions(self, input: str, limit: int = 5) -> list[dict]:
         """
         Retrieves a list of dictionary objects that match a given input string.
         Both Name and Description string matches are evaluated, (5X) multiplier for name matches
