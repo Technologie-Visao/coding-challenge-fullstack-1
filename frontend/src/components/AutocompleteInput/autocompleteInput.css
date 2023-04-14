@@ -1,0 +1,5 @@
+.suggestions-container {
+    position: relative;
+    z-index: 100;
+    background: var(--second-bg-color);
+}

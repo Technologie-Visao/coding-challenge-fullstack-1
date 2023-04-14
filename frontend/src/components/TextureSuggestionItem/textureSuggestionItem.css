@@ -1,0 +1,40 @@
+.suggestion-box {
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    display: flex;
+    background: transparent;
+}
+
+.suggestion-box:hover {
+    background: var(--bg-color);
+}
+
+.suggestion-image {
+    width: 10%;
+    height: auto;
+    background: transparent;
+}
+
+.suggestion-text-box {
+    height: 100%;
+    background: transparent;
+    padding: 1rem;
+}
+
+.suggestion-text {
+    background: transparent;
+    height: 50%;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.suggestion-text-name {
+    font-size: 1.5rem;
+}
+
+.suggestion-text-description {
+    font-size: 1rem;
+}
