@@ -64,3 +64,25 @@ Design an autocomplete component which and will show suggested textures
 - The list of suggestions should NOT show when the input is less than two characters.
 - Display a message when no suggestions are found
 - The design should be mobile friendly
+
+
+### Steps performed
+- Setup local environment to run skeleton app (git, node & yarn modules required) +- 1h
+
+Backend
+- Create backend endpoint that returns the complete textures list 
+    (select and implement new framework, convert json => object => json) +- 2h
+- Weight, sort and filter textures +- 1h
+- Adds basic unit tests +- 30m
+
+FrontEnd 
+-
+
+### How to run
+Backend Setup using python with Falcon framework and waitress HTTP server (windows env)
+- 'pip install falcon falcon_params_verifier waitress'
+- Start server => 'py -m main_server' in backend directory (localhost:9090)
+- Run unit tests => '-m unittest test_texture'
+
+FrontEnd
+-
