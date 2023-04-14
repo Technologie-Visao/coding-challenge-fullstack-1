@@ -21,7 +21,7 @@ const Autocomplete: React.FC<AutocompleteProps> = ({
   const [selectedSuggestionIndex, setSelectedSuggestionIndex] = useState(-1);
 
   useEffect(() => {
-    if (searchTerm.length >= 1) {
+    if (searchTerm.length >= 2) {
       const apiUrl = `http://localhost:3001/textures/suggestions?term=${searchTerm}&limit=5`;
 
       fetch(apiUrl)

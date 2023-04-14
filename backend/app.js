@@ -11,6 +11,13 @@ app.get("/textures/suggestions", (req, res) => {
   const searchTerm = req.query.term || "";
   const limit = parseInt(req.query.limit) || 5;
 
+  if (searchTerm.length < 2) {
+    res
+      .status(400)
+      .json({ error: "Search term must be at least 2 characters long." });
+    return;
+  }
+
   const suggestions = data
     .filter((texture) =>
       texture.name.toLowerCase().includes(searchTerm.toLowerCase())
