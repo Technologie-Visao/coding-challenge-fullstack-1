@@ -4,9 +4,11 @@ import { suggestionsApi } from '../services/suggestionsApi';
 
 // store
 const store = configureStore({
+  // api reducer
   reducer: {
     [suggestionsApi.reducerPath]: suggestionsApi.reducer,
-  }, // Adding the api middleware enables caching, invalidation, polling,
+  },
+  // Adding the api middleware enables caching, invalidation, polling,
   // and other useful features of `rtk-query`.
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(suggestionsApi.middleware),

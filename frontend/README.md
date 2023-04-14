@@ -3,7 +3,8 @@
 To start the server, use the following commands:
 
 ```console
-
+npm install
+npm run dev
 ```
 
 For testing and test coverage:

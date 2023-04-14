@@ -1,11 +1,7 @@
-import { cleanup, render } from '@testing-library/react';
-import { afterEach } from 'vitest';
+import { render } from '@testing-library/react';
 import Providers from '../Providers';
 
-afterEach(() => {
-  cleanup();
-});
-
+// render wrapped with Providers
 const customRender = (ui: React.ReactElement, options = {}) =>
   render(ui, {
     // wrap provider(s) here if needed

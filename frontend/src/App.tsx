@@ -1,10 +1,8 @@
-import './App.css';
-import { useSuggestionsQuery } from './redux/services/suggestionsApi';
+import './App.scss';
+import Home from './pages/Home';
 
 function App() {
-  const { data } = useSuggestionsQuery();
-  console.log('TEST', data);
-  return <div>{data?.toString()}</div>;
+  return <Home />;
 }
 
 export default App;

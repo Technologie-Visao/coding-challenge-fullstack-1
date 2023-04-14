@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { Suggestion } from '@testing-library/react';
 import config from '~/config/config';
 
+// service for the suggestions api
 export const suggestionsApi = createApi({
   reducerPath: 'suggestionsApi',
   baseQuery: fetchBaseQuery({
@@ -9,6 +9,7 @@ export const suggestionsApi = createApi({
   }),
   // strongly typed endpoints
   endpoints: (builder) => ({
+    // Get all suggestions
     suggestions: builder.query<Suggestion[], void>({
       query: () => ({ url: '/' }),
     }),
