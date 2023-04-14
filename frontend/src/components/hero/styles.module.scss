@@ -1,0 +1,20 @@
+@use '~/scss/' as *;
+
+section {
+  display: flex;
+  height: 90vh;
+
+  @include tablet {
+    flex-direction: column;
+  }
+}
+
+.left {
+  flex: 1;
+  background-color: red;
+}
+
+.right {
+  flex: 1;
+  background-color: yellow;
+}

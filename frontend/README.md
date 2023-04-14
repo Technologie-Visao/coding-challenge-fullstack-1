@@ -25,3 +25,5 @@ npm run coverage
 [ts-css-modules-vite-plugin](https://github.com/activeguild/typescript-plugin-css-modules-vite)
 
 [React dropdown component for beginners](https://www.youtube.com/watch?v=jaMgXmrk29M)
+
+[Favicon](https://freesvg.org/abstract-tulip-wood-texture)

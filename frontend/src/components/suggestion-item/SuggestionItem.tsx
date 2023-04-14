@@ -11,10 +11,14 @@ function SuggestionItem({ suggestion, onSelected }: SuggestionItemProps) {
       className={styles['suggestion-item']}
       onClick={() => onSelected?.(suggestion)}
     >
-      <h1>{suggestion.name}</h1>
-      <p>{suggestion.description}</p>
-      <p>{suggestion.score}</p>
-      {/* <img src={suggestion.thumbnail_url} /> */}
+      <div className={styles.thumbnail}>
+        <img src={suggestion.thumbnail_url} />
+      </div>
+      <div className={styles.details}>
+        <h1>{suggestion.name}</h1>
+        <p>{suggestion.description}</p>
+        <p>{suggestion.score}</p>
+      </div>
     </li>
   );
 }

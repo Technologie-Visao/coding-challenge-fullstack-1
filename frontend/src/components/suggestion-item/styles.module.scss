@@ -1,8 +1,24 @@
 .suggestion-item {
+  display: flex;
+
   background-color: lightgreen;
   border: 1px solid;
 
   &:hover {
     background-color: blue;
   }
+}
+
+.thumbnail {
+  flex: 1;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+}
+
+.details {
+  flex: 4;
 }

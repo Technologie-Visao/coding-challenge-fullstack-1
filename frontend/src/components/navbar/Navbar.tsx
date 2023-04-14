@@ -1,12 +1,13 @@
-import React from 'react';
 import SearchBar from '../search-bar/SearchBar';
+import styles from './styles.module.scss';
 
 /**
  * Navbar
  */
 function Navbar() {
   return (
-    <nav>
+    <nav className={styles.container}>
+      <h1>Textio</h1>
       <SearchBar />
     </nav>
   );

@@ -1,7 +1,31 @@
+@use '~/scss/' as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Yeseva+One&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+$font-size: 100%;
+html {
+  font-size: $font-size;
+  @include tablet {
+    font-size: #{$font-size * 0.9};
+  }
+  @include mobile {
+    font-size: #{$font-size * 0.8};
+  }
+}
+
+body {
+  font-family: $font-family;
+}
+
+input,
+button {
+  font-family: inherit;
 }
 
 ul {
