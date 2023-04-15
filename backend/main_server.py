@@ -5,7 +5,7 @@ from texture.texture_suggestions import TextureSuggestions
 
 # Create Server
 def create():
-    app = falcon.App()
+    app = falcon.App(cors_enable=True)
     app.add_route('/textures/suggestions', TextureSuggestions())
     return app
 

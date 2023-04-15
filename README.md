@@ -76,7 +76,8 @@ Backend
 - Adds basic unit tests +- 30m
 
 FrontEnd 
--
+- Search inspiration and setup project from scratch
+- Setup Clean architecture, fetch and display textures as text +- 2h
 
 ### How to run
 Backend Setup using python with Falcon framework and waitress HTTP server (windows env)
@@ -84,5 +85,6 @@ Backend Setup using python with Falcon framework and waitress HTTP server (windo
 - Start server => 'py -m main_server' in backend directory (localhost:9090)
 - Run unit tests => '-m unittest test_texture'
 
-FrontEnd
--
+FrontEnd Setup
+- Install dependencies with 'npm install' from frontend folder
+- Run 'npm run dev' to start
