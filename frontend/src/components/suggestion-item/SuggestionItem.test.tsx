@@ -1,8 +1,7 @@
-import App from '~/App';
 import { render, screen } from '~/tests/test-utils';
 import SuggestionItem from './SuggestionItem';
 
-describe('App', () => {
+describe('SuggestionItem', () => {
   it('renders name', async () => {
     render(
       <SuggestionItem

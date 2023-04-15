@@ -1,16 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 
-// $bg-color: rgb(4, 4, 4);
-// $main-color: rgba(1,160,249);
-// $txt-color: white;
+// colors
+// https://imagecolorpicker.com/color-code/de5f10
+// https://maketintsandshades.com/#DE5F10
+$main-color-light: #eb9f70;
+$main-color: #de5f10;
+$main-color-dark: #85390a;
 
-// $box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-
+// breakpoints
 $mobile-width: 600px;
 $tablet-width: 1024px;
 
-$header-height: 8rem;
-$header-height-shrink: 5rem;
+// values
 $border-radius: 30px;
 
+// fonts
 $font-family: 'Poppins', sans-serif;

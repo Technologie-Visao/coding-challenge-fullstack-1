@@ -2,23 +2,29 @@
 
 section {
   display: flex;
-  height: 90vh;
-  overflow: hidden;
 
+  // column
   @include tablet {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 }
 
 .left {
   flex: 1;
-  background-color: red;
+  border: 1px solid black;
+  // center sphere
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .right {
-  flex: 1.3;
-  background-color: yellow;
+  flex: 1.5;
+  border: 1px solid black;
+}
+
+// necessary to solve issues with canvas not resizing
+.sphere-container {
+  width: 500px;
+  height: 500px;
 }

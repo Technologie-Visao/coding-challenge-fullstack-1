@@ -5,12 +5,15 @@ import Sphere from '../sphere/Sphere';
 import Loading from '~/components/loading/Loading';
 import { OrbitControls } from '@react-three/drei';
 
+/**
+ * Hero section
+ */
 function Hero() {
   return (
     <section>
       <div className={styles.left}>
         {/* Sphere */}
-        <div style={{ width: '600px', height: '600px' }}>
+        <div className={styles['sphere-container']}>
           <Suspense fallback={<Loading />}>
             <Canvas>
               <ambientLight intensity={0.2} />
@@ -18,7 +21,7 @@ function Hero() {
               <pointLight position={[-10, -10, -10]} intensity={0.5} />
               <pointLight position={[0, 0, 10]} intensity={1} />
               <Sphere position={[0, 0, 0]} />
-              <OrbitControls />
+              <OrbitControls enableZoom={false} />
             </Canvas>
           </Suspense>
         </div>

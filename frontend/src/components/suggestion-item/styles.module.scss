@@ -6,7 +6,12 @@
   background-color: lightgreen;
   border: 1px solid;
 
+  // highlight colors
   &:hover {
+    background-color: green;
+  }
+
+  &.selected {
     background-color: blue;
   }
 }

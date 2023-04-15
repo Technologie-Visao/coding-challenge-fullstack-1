@@ -1,5 +1,7 @@
+/**
+ * Loading spinner (to be improved)
+ */
 function Loading() {
-  // TODO
   return <div>Loading...</div>;
 }
 

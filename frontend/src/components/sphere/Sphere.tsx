@@ -1,12 +1,16 @@
 import { createRoot } from 'react-dom/client';
 import React, { useRef, useState } from 'react';
-import { Canvas, useFrame, useLoader } from '@react-three/fiber';
+import { Canvas, MeshProps, useFrame, useLoader } from '@react-three/fiber';
 import { TextureLoader } from 'three/src/loaders/TextureLoader';
 
-function filePaths(names) {
+function filePaths(names: string[]) {
   return names.map((name) => `Bark012_1K-JPG/${name}.jpg`);
 }
-function Sphere(props) {
+
+/**
+ * Simple 3d sphere with wood texture. Can be extended to demo selected textures
+ */
+function Sphere(props: MeshProps) {
   // load textures
   const [colorMap, displacementMap, normalMap, roughnessMap, aoMap] = useLoader(
     TextureLoader,
@@ -20,7 +24,7 @@ function Sphere(props) {
   );
 
   // This reference gives us direct access to the THREE.Mesh object
-  const ref = useRef();
+  const ref = useRef<any>();
   // Hold state for hovered and clicked events
   const [hovered, hover] = useState(false);
   const [clicked, click] = useState(false);
@@ -35,7 +39,7 @@ function Sphere(props) {
       {...props}
       ref={ref}
       // scale={clicked ? 1.5 : 1}
-      scale={2}
+      scale={2.5}
       onClick={(event) => click(!clicked)}
       onPointerOver={(event) => hover(true)}
       onPointerOut={(event) => hover(false)}
