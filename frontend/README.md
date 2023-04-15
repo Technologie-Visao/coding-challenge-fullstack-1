@@ -27,3 +27,5 @@ npm run coverage
 [React dropdown component for beginners](https://www.youtube.com/watch?v=jaMgXmrk29M)
 
 [Favicon](https://freesvg.org/abstract-tulip-wood-texture)
+
+[@react-three/fiber](https://github.com/pmndrs/react-three-fiber)

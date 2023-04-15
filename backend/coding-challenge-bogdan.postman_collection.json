@@ -1,0 +1,99 @@
+{
+  "info": {
+    "_postman_id": "2eaecdbf-62e9-4901-88ac-0cb47fc4bf4d",
+    "name": "Coding Challenge - Bogdan",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Hello",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{BASE_URL}}",
+          "host": ["{{BASE_URL}}"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "All Suggestions",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{BASE_URL}}/textures/suggestions",
+          "host": ["{{BASE_URL}}"],
+          "path": ["textures", "suggestions"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Limited Suggestions",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{BASE_URL}}/textures/suggestions?limit=3",
+          "host": ["{{BASE_URL}}"],
+          "path": ["textures", "suggestions"],
+          "query": [
+            {
+              "key": "limit",
+              "value": "3"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Search Suggestions",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{BASE_URL}}/textures/suggestions?limit=3&search=Bubbl",
+          "host": ["{{BASE_URL}}"],
+          "path": ["textures", "suggestions"],
+          "query": [
+            {
+              "key": "limit",
+              "value": "3"
+            },
+            {
+              "key": "search",
+              "value": "Bubbl"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Search Description",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{BASE_URL}}/textures/suggestions?limit=10&search=dry",
+          "host": ["{{BASE_URL}}"],
+          "path": ["textures", "suggestions"],
+          "query": [
+            {
+              "key": "limit",
+              "value": "10"
+            },
+            {
+              "key": "search",
+              "value": "dry"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
