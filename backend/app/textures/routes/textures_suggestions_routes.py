@@ -1,6 +1,6 @@
 from flask import jsonify, request
 from typing import Dict, List
-from app.textures.utils import INDEX_NAME
+from app.constants.utils import INDEX_NAME
 from app.database.elasticsearch.getEs import es
 from app.models.texture import Texture
 from flask import Response

@@ -13,7 +13,7 @@ def register_blueprints(app):
     app.register_blueprint(textures_blueprint)
 
 
-def create_app():
+def create_app(testing=False):
     app = Flask(__name__)
     register_blueprints(app)
     CORS(app)

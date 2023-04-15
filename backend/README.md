@@ -8,7 +8,8 @@
    - python -m venv venv
    
 3. Activate virtual env.
-    - source venv/bin/activate
+    - source venv/bin/activate for MacOs
+    - venv\Scripts\activate for Windows
    
 4. Install requirements.
     - pip install -r requirements.txt

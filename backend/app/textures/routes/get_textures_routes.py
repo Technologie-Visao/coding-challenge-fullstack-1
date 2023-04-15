@@ -5,7 +5,7 @@ from elasticsearch.exceptions import NotFoundError
 from typing import Union, Tuple
 from flask import Response
 
-from app.textures.utils import INDEX_NAME, NOT_FOUND_ERROR
+from app.constants.utils import INDEX_NAME, NOT_FOUND_ERROR
 
 
 def get_texture(texture_id: str) -> Union[Response, Tuple[Response, int]]:

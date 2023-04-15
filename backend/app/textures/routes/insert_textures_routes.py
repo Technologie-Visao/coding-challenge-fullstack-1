@@ -4,7 +4,7 @@ from flask import jsonify, request
 from typing import Union, Tuple
 from flask import Response
 
-from app.textures.utils import INDEX_NAME
+from app.constants.utils import INDEX_NAME
 
 
 def insert_texture() -> Union[Response, Tuple[Response, int]]:

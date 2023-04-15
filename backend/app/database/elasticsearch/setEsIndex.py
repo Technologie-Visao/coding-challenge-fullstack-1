@@ -1,5 +1,5 @@
 from app.database.elasticsearch.getEs import es
-from app.textures.utils import INDEX_NAME
+from app.constants.utils import INDEX_NAME
 
 
 def create_index():
