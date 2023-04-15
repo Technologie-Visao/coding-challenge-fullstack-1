@@ -1,6 +1,6 @@
 import json
 
-from tests.unittests.helpers.utils import TEXTURE_SUGGESTIONS_ENDPOINT, LIMIT_PARAM, SEARCH_TERM_PARAM, \
+from tests.unit.helpers.utils import TEXTURE_SUGGESTIONS_ENDPOINT, LIMIT_PARAM, SEARCH_TERM_PARAM, \
     ALL_TEXTURES_ENDPOINT
 
 

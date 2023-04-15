@@ -19,5 +19,14 @@
 5. Run the app.
     - python run.py || flask run || le bouton play vert en haut !
     - running on http://localhost:5000/
+ 
+
+## Tests
+1. Go to backend directory.
+   - cd backend
    
+2.Run pytest command.
+    - pytest
+
+
 ## Comments

@@ -3,6 +3,7 @@ import SearchPage from "./pages/search/SearchPage";
 import AppHeader from "./components/header/AppHeader";
 import AppFooter from "./components/footer/AppFooter";
 
+
 function App() {
 
   return (

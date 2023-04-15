@@ -77,7 +77,6 @@ const Autocomplete = ({onSuggestionSelected}: AutocompleteProps) => {
   };
 
 
-
   return (
     <View style={styles.autocomplete}>
       <TextInput
@@ -87,8 +86,7 @@ const Autocomplete = ({onSuggestionSelected}: AutocompleteProps) => {
         onChangeText={setSearchTerm}
         placeholder="Search textures..."
       />
-
-      {showSuggestions &&
+      { showSuggestions &&
         <ScrollView style={styles.suggestions}>
           {renderSuggestions()}
         </ScrollView>
