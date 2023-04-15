@@ -1,19 +1,18 @@
 import json
 from app.models.texture import Texture
+from tests.e2e.helpers.utils import TEXTURE_NAME, TEXTURE_URL, insert_texture, TEXTURE_DESCRIPTION, UPDATED_TEXTURE_DESCRIPTION
 
 
 def test_duplicate_texture_insert_e2e(client):
-    texture = Texture("Duplicate Test Texture", "A test texture.",
-                      "https://static-dev.withpoly.com/v3-voronoi/textures/previews/2b9f22c8-8348-46f5-8558-bc20364dbca1.webp")
-    response = client.post('/textures/insert', json=texture.to_dict())
+    texture = Texture(TEXTURE_NAME, TEXTURE_DESCRIPTION, TEXTURE_URL)
+    response = insert_texture(client, texture)
     assert response.status_code == 200
 
-    updated_texture = Texture("Duplicate Test Texture", "An updated test texture.",
-                              "https://static-dev.withpoly.com/v3-voronoi/textures/previews/2b9f22c8-8348-46f5-8558-bc20364dbca1.webp")
-    response = client.post('/textures/insert', json=updated_texture.to_dict())
+    updated_texture = Texture(TEXTURE_NAME, UPDATED_TEXTURE_DESCRIPTION, TEXTURE_URL)
+    response = insert_texture(client, updated_texture)
     assert response.status_code == 200
 
-    response = client.get('/textures/suggestions?search_term=Duplicate&limit=5')
+    response = client.get(f'/textures/suggestions?search_term=Duplicate&limit=5')
     assert response.status_code == 200
     data = json.loads(response.data)
     assert isinstance(data, list)
@@ -22,5 +21,3 @@ def test_duplicate_texture_insert_e2e(client):
     assert len(matched_textures) == 1
 
     assert matched_textures[0]["description"] == updated_texture.description
-
-
