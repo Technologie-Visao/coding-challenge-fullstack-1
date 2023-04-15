@@ -17,3 +17,6 @@
     
 5. Run the app.
     - python run.py || flask run || le bouton play vert en haut !
+    - running on http://localhost:5000/
+   
+## Comments

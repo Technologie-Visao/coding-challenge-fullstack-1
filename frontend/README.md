@@ -8,5 +8,7 @@
    - npm install
    
 3. Run the application.
-    - npm run dev
+    - npm run dev 
+    - running on http://localhost:5173/
 
+## Comments

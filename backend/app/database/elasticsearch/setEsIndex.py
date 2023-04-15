@@ -1,5 +1,5 @@
-from backendVisao.app.database.elasticsearch.getEs import es
-from backendVisao.app.textures.utils import INDEX_NAME
+from app.database.elasticsearch.getEs import es
+from app.textures.utils import INDEX_NAME
 
 
 def create_index():

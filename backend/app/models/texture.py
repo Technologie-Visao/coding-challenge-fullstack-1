@@ -1,14 +1,15 @@
+from typing import Dict
+
 
 class Texture:
-
-    def __init__(self, name, description, url):
+    def __init__(self, name: str, description: str, thumbnail_url: str):
         self.name = name
         self.description = description
-        self.url = url
+        self.url = thumbnail_url
 
-    def to_dict(self):
+    def to_dict(self) -> Dict[str, str]:
         return {
             'name': self.name,
             'description': self.description,
-            'url': self.url
+            'thumbnail_url': self.url
         }
