@@ -1,5 +1,5 @@
 import App from '~/App';
-import { findByText, render, screen } from './tests/test-utils';
+import { render } from './tests/test-utils';
 
 describe('App', () => {
   it('renders', async () => {

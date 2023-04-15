@@ -33,7 +33,7 @@ function SuggestionList({
   }, [selectedSuggestion]);
 
   return (
-    <ul>
+    <ul aria-label="suggestions">
       {suggestions.map((suggestion) => {
         const selected = suggestion === selectedSuggestion;
         return (
