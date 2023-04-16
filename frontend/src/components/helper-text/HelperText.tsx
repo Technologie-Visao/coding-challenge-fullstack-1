@@ -22,7 +22,7 @@ function HelperText({ search, suggestions }: HelperTextProps) {
     } else if (noSuggestionsFound) {
       return 'No suggestions found';
     } else if (suggestions.length > 1) {
-      return `Top ${suggestions.length} textures`;
+      return `Top ${suggestions.length} results`;
     } else {
       return '';
     }

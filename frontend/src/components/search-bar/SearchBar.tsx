@@ -59,7 +59,7 @@ function SearchBar() {
         {/* Input */}
         <input
           type="text"
-          placeholder="Search"
+          placeholder="Search in the market"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           onKeyDown={handleKeyPress}

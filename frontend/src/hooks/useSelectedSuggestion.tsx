@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
  * Selected suggestion
  */
 function useSelectedSuggestion(search: string, suggestions: Suggestion[]) {
-  const [selectedIndex, setSelectedIndex] = useState(-1);
+  const [selectedIndex, setSelectedIndex] = useState(-1); // -1 to indicate no suggestion selected
   const selectedSuggestion: Suggestion | undefined = suggestions[selectedIndex];
 
   // reset selectedIndex for each character typed

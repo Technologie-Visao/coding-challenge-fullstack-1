@@ -11,7 +11,7 @@ section {
 
 .left {
   flex: 1;
-  border: 1px solid black;
+  // border: 1px solid black;
   // center sphere
   display: flex;
   align-items: center;
@@ -20,7 +20,7 @@ section {
 
 .right {
   flex: 1.5;
-  border: 1px solid black;
+  // border: 1px solid black;
 }
 
 // necessary to solve issues with canvas not resizing

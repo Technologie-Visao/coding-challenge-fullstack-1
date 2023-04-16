@@ -1,6 +1,14 @@
-$size: 30px;
+$size: 25px;
+
+// https://blog.union.io/code/2017/08/10/img-svg-fill/
+$white-filer: invert(1);
+// https://css-tricks.com/adding-shadows-to-svg-icons-with-css-and-svg-filters/
+$shadow-filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
 
 .icon {
   width: $size;
   height: $size;
+
+  filter: $shadow-filter;
+  fill: white;
 }

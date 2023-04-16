@@ -1,8 +1,15 @@
+@use '~/scss/' as *;
+
 $size: 20px;
 
 .icon {
   width: $size;
   height: $size;
+
+  fill: white;
+  background-color: $main-color;
+  border-radius: 50%;
+  padding: 3px;
 
   &:hover {
     cursor: pointer;

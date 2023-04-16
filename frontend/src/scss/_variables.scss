@@ -3,9 +3,21 @@
 // colors
 // https://imagecolorpicker.com/color-code/de5f10
 // https://maketintsandshades.com/#DE5F10
-$main-color-light: #eb9f70;
-$main-color: #de5f10;
-$main-color-dark: #85390a;
+$main-color: #00aa55;
+// https://www.canva.com/colors/color-wheel/
+$contrast-color: #aa0055;
+
+$main-color-light-10: #1ab366;
+$main-color-light-20: #33bb77;
+$main-color-light-30: #4dc488;
+$main-color-light-40: #66cc99;
+$main-color-dark-10: #00994d;
+$main-color-dark-20: #008844;
+$main-color-dark-30: #00773b;
+$main-color-dark-40: #006633;
+
+$main-color-light: $main-color-light-30;
+$main-color-dark: $main-color-dark-30;
 
 // breakpoints
 $mobile-width: 600px;

@@ -1,26 +1,31 @@
+@use '~/scss/' as *;
+
 .suggestion-item {
   display: flex;
   gap: 10px;
   padding: 10px 20px;
 
-  // background-color: lightgreen;
-  // border: 1px solid;
+  color: white;
 
   // highlight colors
   &:hover {
-    background-color: green;
+    background-color: $main-color-light-10;
+    cursor: pointer;
   }
 
   &.selected {
-    background-color: blue;
+    background-color: $contrast-color;
   }
 
+  // description
   .description {
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 2; /* number of lines to show */
     line-clamp: 2;
     -webkit-box-orient: vertical;
+
+    color: wheat;
   }
 }
 
