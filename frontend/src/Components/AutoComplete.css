@@ -4,22 +4,21 @@
     width: 300px;
     left: 50%;
     margin: auto;
-    padding-bottom: 4px;
     border: solid;
     border-width: 1px;
     border-color: rgba(69, 69, 69, 0.72);
     border-radius: 5px;
     color: rgb(177, 177, 177);
+    padding: 4px;
 }
   
 .itemListNot {
-    padding: 0.5rem;
+    padding: 6px;
     text-align: center;
 }
   
 .itemList {
-    padding: 0.3rem;
-    border-width: 1px;
+    padding: 6px;
     text-align: left;
     margin-inline: 4px;
     background: rgba(47, 47, 47, 0.72);
