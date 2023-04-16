@@ -1,11 +1,17 @@
-import {Image, StyleSheet, Text, View} from "react-native";
+import { StyleSheet, Text, View} from "react-native";
 import {TextureCardProps} from "../../types/textures/card/TextureCardProps";
+import {Canvas} from "@react-three/fiber";
+import Sphere3D from "../textures/3DSphere";
 
 const TextureCard = ({suggestion}: TextureCardProps) => {
 
   return (
     <View style={styles.card}>
-      <Image source={{uri: suggestion.thumbnail_url}} style={styles.cardThumbnail}/>
+      <View style={styles.cardThumbnail}>
+        <Canvas style={styles.cardThumbnail}>
+            <Sphere3D textureUrl={suggestion.thumbnail_url} />
+        </Canvas>
+      </View>
       <Text style={styles.cardName}>{suggestion.name}</Text>
       <Text style={styles.cardDescription}>{suggestion.description}</Text>
     </View>

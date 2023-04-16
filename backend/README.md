@@ -28,5 +28,6 @@
 2.Run pytest command.
     - pytest
 
+![Alt Text](app/static/images/tests.png)
 
 ## Comments
