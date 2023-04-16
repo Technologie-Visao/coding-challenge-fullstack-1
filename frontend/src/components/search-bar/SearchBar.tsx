@@ -4,7 +4,11 @@ import SuggestionList from '../suggestion-list/SuggestionList';
 import styles from './styles.module.scss';
 import useSelectedSuggestion from '~/hooks/useSelectedSuggestion';
 import useFocus from '~/hooks/useFocus';
-import useHelperText from '~/hooks/useHelperText';
+import Dropdown from '../dropdown/Dropdown';
+import SearchIcon from '../icons/search/SearchIcon';
+import ClearIcon from '../icons/clear/ClearIcon';
+import HelperText, { MIN_CHARACTERS } from '../helper-text/HelperText';
+import ScrollContainer from '../scroll-container/ScrollContainer';
 
 /**
  * Autocomplete search bar
@@ -21,8 +25,6 @@ function SearchBar() {
   );
   // focus
   const { focused, onFocus, wrapperRef } = useFocus();
-  // helper text
-  const { isSearchLongEnough, helperText } = useHelperText(search, suggestions);
 
   // set search to the name of the selected suggestion
   function handleSelected(suggestion: Suggestion) {
@@ -52,6 +54,8 @@ function SearchBar() {
     <div className={styles.container} ref={wrapperRef} onFocus={onFocus}>
       {/* Search */}
       <div className={styles['search-bar-container']}>
+        {/* <div className={styles['search-bar-wrapper']}> */}
+        <SearchIcon />
         {/* Input */}
         <input
           type="text"
@@ -61,20 +65,23 @@ function SearchBar() {
           onKeyDown={handleKeyPress}
         />
         {/* Clear */}
-        <button onClick={clear}>Clear</button>
+        <ClearIcon hide={search.length === 0} onClick={clear} />
+        {/* </div> */}
       </div>
       {/* Dropdown */}
-      {focused && (
-        <div className={styles.dropdown}>
-          <p>{helperText}</p>
-          {isSearchLongEnough && (
-            <SuggestionList
-              suggestions={suggestions}
-              selectedSuggestion={selectedSuggestion}
-              onSelected={handleSelected}
-            />
-          )}
-        </div>
+      {focused && search !== '' && (
+        <Dropdown>
+          <ScrollContainer>
+            <HelperText search={search} suggestions={suggestions} />
+            {search.length >= MIN_CHARACTERS && (
+              <SuggestionList
+                suggestions={suggestions}
+                selectedSuggestion={selectedSuggestion}
+                onSelected={handleSelected}
+              />
+            )}
+          </ScrollContainer>
+        </Dropdown>
       )}
     </div>
   );

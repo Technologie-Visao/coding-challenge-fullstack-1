@@ -1,0 +1,10 @@
+$size: 20px;
+
+.icon {
+  width: $size;
+  height: $size;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

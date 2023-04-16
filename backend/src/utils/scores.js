@@ -1,5 +1,10 @@
 const { tokenize, preprocess } = require('./preprocessing')
 
+// settings
+const NAME_MULTIPLIER = 10
+const DESCRIPTION_MULTIPLIER = 5
+const PARTIAL_MATCH_MULTIPLIER = 0.1
+
 /**
  * Whether a search query matches a word
  * @param {string} word
@@ -14,7 +19,7 @@ function wordsMatch(word, search) {
   }
   // reward matches that are not at the start less
   else if (startIndex > 0) {
-    return 0.1
+    return PARTIAL_MATCH_MULTIPLIER
   } else {
     // no matches were found
     return 0
@@ -74,10 +79,11 @@ function quantifyMatches(text, searchQuery) {
  */
 function scoreSearch(suggestion, search) {
   // the name field is the most important
-  const nameScore = quantifyMatches(suggestion.name, search) * 10
+  const nameScore = quantifyMatches(suggestion.name, search) * NAME_MULTIPLIER
   // give less importance to description
   // keep in mind that longer descriptions will result in lower scores
-  const descriptionScore = quantifyMatches(suggestion.description, search) * 5
+  const descriptionScore =
+    quantifyMatches(suggestion.description, search) * DESCRIPTION_MULTIPLIER
   return nameScore + descriptionScore
 }
 

@@ -1,0 +1,15 @@
+@use '~/scss/' as *;
+
+.dropdown {
+  width: 100%;
+  // absolute position so that it doesn't change the height of the navbar
+  position: absolute;
+  // behind search bar
+  z-index: -1;
+
+  background-color: yellow;
+  border-radius: $border-radius;
+  padding-bottom: $border-radius;
+  padding-top: $search-bar-height;
+  margin-top: -$search-bar-height;
+}

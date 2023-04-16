@@ -31,8 +31,8 @@ function SuggestionItem({
       {/* Details */}
       <div className={styles.details}>
         <h1>{suggestion.name}</h1>
-        <p>{suggestion.description}</p>
-        <p>{suggestion.score}</p>
+        <p className={styles.description}>{suggestion.description}</p>
+        {/* <p>{suggestion.score}</p> */}
       </div>
     </div>
   );

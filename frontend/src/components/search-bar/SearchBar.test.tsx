@@ -43,4 +43,13 @@ describe('Searchbar', () => {
     // no results found
     expect(screen.getByText(/no suggestions found/i)).toBeInTheDocument();
   });
+
+  it('selects suggestion', async () => {
+    render(<SearchBar />);
+    const searchBar = screen.getByRole<HTMLInputElement>('textbox');
+    await userEvent.type(searchBar, 'au');
+    await userEvent.type(searchBar, '{arrowdown}');
+    await userEvent.type(searchBar, '{enter}');
+    expect(searchBar.value).toBe('Aurora');
+  });
 });

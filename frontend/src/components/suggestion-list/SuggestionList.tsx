@@ -1,6 +1,5 @@
 import { useEffect, useRef } from 'react';
 import SuggestionItem from '../suggestion-item/SuggestionItem';
-import styles from './styles.module.scss';
 
 type SuggestionListProps = {
   suggestions: SearchedSuggestion[];

@@ -3,6 +3,23 @@ import { cleanup } from '@testing-library/react';
 import matchers from '@testing-library/jest-dom/matchers';
 import { server } from './mocks/server';
 
+// fix resize observer error
+class ResizeObserver {
+  observe() {
+    // do nothing
+  }
+  unobserve() {
+    // do nothing
+  }
+  disconnect() {
+    // do nothing
+  }
+}
+
+global.ResizeObserver = ResizeObserver;
+// fix scrollIntoView
+global.window.HTMLElement.prototype.scrollIntoView = function () {};
+
 // extends Vitest's expect method with methods from react-testing-library
 expect.extend(matchers);
 
