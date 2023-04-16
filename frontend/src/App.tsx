@@ -3,9 +3,7 @@ import SearchTexturePage from './Pages/TexturesPage'
 
 function App() {
     return (
-        <div className="container">
-            <SearchTexturePage />
-        </div>
+        <SearchTexturePage />
     )
 }
 

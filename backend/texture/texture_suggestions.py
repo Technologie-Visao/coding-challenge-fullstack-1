@@ -23,6 +23,10 @@ class TextureSuggestions(object):
         textures_list = []
         with open("data.json") as file:
             textures_json_string_array = json.load(file)
+            # Small shortcul to avoid create another route /textures for the exercice
+            # Need to return all textures to populate autoComplete data
+            if searchTerm == "*":
+                return textures_json_string_array
             for textures_json_string in textures_json_string_array:
                 # Convert json string into objects to play with them
                 texture_json = json.dumps(textures_json_string)

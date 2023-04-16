@@ -1,0 +1,35 @@
+.autocomplete {
+    display: flex;
+    flex-Direction: column;
+    width: 300px;
+    left: 50%;
+    margin: auto;
+    padding-bottom: 4px;
+    border: solid;
+    border-width: 1px;
+    border-color: rgba(69, 69, 69, 0.72);
+    border-radius: 5px;
+    color: rgb(177, 177, 177);
+}
+  
+.itemListNot {
+    padding: 0.5rem;
+    text-align: center;
+}
+  
+.itemList {
+    padding: 0.3rem;
+    border-width: 1px;
+    text-align: left;
+    margin-inline: 4px;
+    background: rgba(47, 47, 47, 0.72);
+}
+  
+.itemList:hover {
+    cursor: pointer;
+    background: rgba(69, 69, 69, 0.72);
+}
+  
+.activeItem {
+    background: rgba(69, 69, 69, 0.72);
+}

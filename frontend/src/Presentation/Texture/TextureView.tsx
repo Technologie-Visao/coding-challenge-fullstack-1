@@ -1,5 +1,5 @@
-import { Tooltip } from "@material-ui/core";
 import './TextureView.css';
+
 
 type TextureComponentProps = {
     name: string,
@@ -8,13 +8,15 @@ type TextureComponentProps = {
 }
 
 const TextureComponent = (props: TextureComponentProps) => {
+    const upperDescription = props.description.charAt(0).toUpperCase() + props.description.slice(1);
     return (
-        <Tooltip title={props.description}>
-            <div className="Box">
-                <h3>{props.name}</h3>
-                <img src={props.thumbnail_url} />
+        <div className="img__wrap">
+            <h3>{props.name}</h3>
+            <img className="img__img" src={props.thumbnail_url} />
+            <div className="img__description">
+                <p>{upperDescription}</p>
             </div>
-        </Tooltip>
+        </div>
     );
 }
 

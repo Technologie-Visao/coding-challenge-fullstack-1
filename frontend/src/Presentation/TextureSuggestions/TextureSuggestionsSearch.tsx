@@ -1,19 +1,21 @@
-import { ChangeEvent } from "react";
 import useViewModel from "./TextureSuggestionsSearchModel";
-import CustomTextField from "../../Components/TextureSearchBar";
 import TextureComponent from "../Texture/TextureView";
+import AutoComplete from "../../Components/AutoComplete";
 
 
 export default function TextureSuggestionsSearchView() {
-    const { getTextureSuggestions, textures } = useViewModel();
-
+    const { getTextureSuggestions, textureNames, textures } = useViewModel();
     return (
         <div>
-            <h1>Texture suggestions</h1>
-            <div style={{width:"100%"}}>
-                <CustomTextField changeHandler={function (event: ChangeEvent<HTMLInputElement>): void {
-                    getTextureSuggestions(event.currentTarget.value, 10);
-                }}/>
+            <h1 style={{textTransform:"uppercase"}}>Textures</h1>
+            <div style={{width:"100%"}}>{
+                <AutoComplete   data={textureNames} 
+                                inputChangeHandler={function (input: string): void {
+                                    getTextureSuggestions(input, 10);
+                                } } 
+                                minSearchInput={2}
+                                maxElementsDisplayed={5}
+                />}
             </div>
             {textures.map((texture, i) => {
                 return (
