@@ -16,7 +16,7 @@ packaging==23.1
 pluggy==1.0.0
 pytest==7.3.1
 pytest-flask==1.2.0
-python-dotenv==1.0.0
+python-dotenv==0.19.2
 six==1.16.0
 tomli==2.0.1
 urllib3==1.26.15
