@@ -14,4 +14,8 @@ describe('Preprocessing', () => {
   test('handles empty strings', () => {
     expect(tokenize('')).toEqual([])
   })
+
+  test('removes duplicates', () => {
+    expect(tokenize('tree tree tree')).toEqual(['tree'])
+  })
 })

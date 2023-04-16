@@ -34,8 +34,9 @@ function searchSuggestions(suggestions, search) {
  */
 function getAll({ limit, search } = {}) {
   let results = data
+  // empty array for empty search
+  if (search === '') return []
   // search suggestions
-  if (search === '') results = []
   else if (search) results = searchSuggestions(results, search)
 
   // limit number of returned suggestions

@@ -1,5 +1,8 @@
 import styles from './styles.module.scss';
 
+/**
+ * Company logo
+ */
 function Logo() {
   return (
     <a href="/" className={styles.container}>

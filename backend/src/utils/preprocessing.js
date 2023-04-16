@@ -145,13 +145,19 @@ function preprocess(text) {
  * @param {string} text
  * @returns {[]}
  */
-function tokenize(text, removeStopWords = true) {
+function tokenize(text, removeStopWords = true, removeDuplicates = true) {
   if (text === '') return []
   // split into words with any whitespace
   let words = text.split(/\s+/)
   // remove stop words
-  if (removeStopWords)
+  if (removeStopWords) {
     words = words.filter((word) => !STOP_WORDS.includes(word))
+  }
+
+  // remove duplicate words
+  if (removeDuplicates) {
+    words = [...new Set(words)]
+  }
   return words
 }
 

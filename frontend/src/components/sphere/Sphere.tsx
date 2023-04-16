@@ -1,6 +1,5 @@
-import { createRoot } from 'react-dom/client';
-import React, { useRef, useState } from 'react';
-import { Canvas, MeshProps, useFrame, useLoader } from '@react-three/fiber';
+import { MeshProps, useFrame, useLoader } from '@react-three/fiber';
+import { useRef, useState } from 'react';
 import { TextureLoader } from 'three/src/loaders/TextureLoader';
 
 function filePaths(names: string[]) {

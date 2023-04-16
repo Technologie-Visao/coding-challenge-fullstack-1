@@ -1,8 +1,8 @@
-import { getAllByRole, render, screen, userEvent } from '~/tests/test-utils';
-import SearchBar from './SearchBar';
-import { server } from '~/tests/mocks/server';
 import { rest } from 'msw';
 import config from '~/config/config';
+import { server } from '~/tests/mocks/server';
+import { render, screen, userEvent } from '~/tests/test-utils';
+import SearchBar from './SearchBar';
 
 function getSuggestions() {
   return screen.queryByRole('list', {

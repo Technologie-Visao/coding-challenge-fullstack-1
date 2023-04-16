@@ -1,9 +1,9 @@
-import { Suspense } from 'react';
-import styles from './styles.module.scss';
-import { Canvas, useFrame } from '@react-three/fiber';
-import Sphere from '../sphere/Sphere';
-import Loading from '~/components/loading/Loading';
 import { OrbitControls } from '@react-three/drei';
+import { Canvas } from '@react-three/fiber';
+import { Suspense } from 'react';
+import Loading from '~/components/loading/Loading';
+import Sphere from '../sphere/Sphere';
+import styles from './styles.module.scss';
 
 /**
  * Hero section
