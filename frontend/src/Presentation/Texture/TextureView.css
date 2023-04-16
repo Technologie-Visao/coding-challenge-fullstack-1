@@ -1,0 +1,11 @@
+.Box {
+  margin: 10px;
+  display: inline-block;
+  border-radius: 8px;
+  padding: 20px;
+  width: 250px;
+}
+
+.Box:hover{
+    background: #363636;
+}

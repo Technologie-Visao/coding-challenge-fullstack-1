@@ -13,7 +13,9 @@ export default function TextureSuggestionsSearchModel() {
     );
 
     async function getTextureSuggestions(searchTerm: string, maxItems: number) {
-        setTextureSuggestions(await UseCase.invoke(searchTerm=searchTerm, maxItems=maxItems));
+        if(searchTerm){
+            setTextureSuggestions(await UseCase.invoke(searchTerm=searchTerm, maxItems=maxItems));
+        }
     }
 
     return {

@@ -2,7 +2,7 @@ import TextureSuggestionsSearchView from "../Presentation/TextureSuggestions/Tex
 
 
 function TexturePage() {
-    return TextureSuggestionsSearchView()
+    return <TextureSuggestionsSearchView/>
 }
 
 export default TexturePage;
