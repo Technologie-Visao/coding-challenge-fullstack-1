@@ -87,9 +87,11 @@ const Autocomplete = ({onSuggestionSelected}: AutocompleteProps) => {
         placeholder="Search textures..."
       />
       { showSuggestions &&
-        <ScrollView style={styles.suggestions}>
+      <React.Fragment>
+        <ScrollView style={styles.suggestions} testID={"suggestions"}>
           {renderSuggestions()}
         </ScrollView>
+      </React.Fragment>
       }
     </View>
   );
