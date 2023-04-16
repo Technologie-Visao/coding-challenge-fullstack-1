@@ -31,6 +31,9 @@ body {
     $main-color-dark 100%
   );
   min-height: 100vh;
+  width: 100vw;
+  // fixes issue with sphere when screen is very small
+  overflow: hidden;
 }
 
 input,

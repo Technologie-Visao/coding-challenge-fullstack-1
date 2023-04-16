@@ -28,10 +28,13 @@ function Hero() {
       </div>
       <div className={styles.right}>
         {/* Call to action */}
-        <h1>Build your dream model</h1>
+        <h1>
+          Build your <br />
+          dream model
+        </h1>
         <p>
-          Lowest prices in all the industry. <br /> Convice yourself by looking
-          at more of our products.
+          Lowest prices in all the industry. <br /> Convice yourself of the best
+          prices <br /> by looking at more of our products.
         </p>
         <button>Pick up now</button>
       </div>

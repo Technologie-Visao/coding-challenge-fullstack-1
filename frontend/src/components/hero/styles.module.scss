@@ -3,24 +3,101 @@
 section {
   display: flex;
 
-  // column
+  // collapse into column
   @include tablet {
     flex-direction: column-reverse;
   }
 }
 
+// animations
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-200px);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+// left
 .left {
   flex: 1;
-  // border: 1px solid black;
   // center sphere
   display: flex;
   align-items: center;
   justify-content: center;
+
+  // appear after delay
+  animation-name: appear;
+  animation-duration: 1s;
+  animation-timing-function: ease-in;
+  animation-delay: 1s;
+  animation-fill-mode: both;
 }
 
+// right
 .right {
   flex: 1.5;
-  // border: 1px solid black;
+  padding: 2em;
+  margin-top: 2em;
+
+  @include mobile {
+    margin-top: 1em;
+  }
+
+  // slide in left
+  animation-name: slideInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+
+  h1 {
+    font-size: 5rem;
+    color: white;
+    line-height: 1.2;
+  }
+
+  p {
+    color: wheat;
+    font-size: 1.2rem;
+  }
+
+  button {
+    margin-top: 1em;
+
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 0.5em 1em;
+
+    color: white;
+    background-color: $contrast-color;
+    border: none;
+    border-radius: $border-radius;
+
+    box-shadow: 0px 0px 10px rgba($color: black, $alpha: 0.1);
+
+    transition: all 0.3s;
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0px 0px 10px rgba($color: white, $alpha: 0.2);
+      transform: scale(1.05);
+    }
+
+    @include mobile {
+      font-size: 2rem;
+    }
+  }
 }
 
 // necessary to solve issues with canvas not resizing

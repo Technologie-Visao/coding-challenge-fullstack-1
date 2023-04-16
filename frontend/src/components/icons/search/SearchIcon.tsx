@@ -1,10 +1,10 @@
 import styles from './styles.module.scss';
 
-function SearchIcon() {
+function SearchIcon({ elevate = false }) {
   // return <img src="search-icon.svg" className={styles.icon} />;
   return (
     <svg
-      className={styles.icon}
+      className={`${styles.icon} ${elevate ? styles.elevate : ''}`}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 50 50"
       width="50px"

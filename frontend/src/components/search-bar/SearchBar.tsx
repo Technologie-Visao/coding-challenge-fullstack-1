@@ -55,7 +55,7 @@ function SearchBar() {
       {/* Search */}
       <div className={styles['search-bar-container']}>
         {/* <div className={styles['search-bar-wrapper']}> */}
-        <SearchIcon />
+        <SearchIcon elevate={focused} />
         {/* Input */}
         <input
           type="text"

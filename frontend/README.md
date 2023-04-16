@@ -29,3 +29,5 @@ npm run coverage
 [Favicon](https://freesvg.org/abstract-tulip-wood-texture)
 
 [@react-three/fiber](https://github.com/pmndrs/react-three-fiber)
+
+[Learn CSS Animations In 20 Minutes - For Beginners](https://www.youtube.com/watch?v=SgmNxE9lWcY)

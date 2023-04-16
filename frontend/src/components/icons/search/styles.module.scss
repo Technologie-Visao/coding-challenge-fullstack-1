@@ -1,14 +1,22 @@
-$size: 25px;
+$size: 20px;
 
 // https://blog.union.io/code/2017/08/10/img-svg-fill/
-$white-filer: invert(1);
+// $white-filer: invert(1);
 // https://css-tricks.com/adding-shadows-to-svg-icons-with-css-and-svg-filters/
-$shadow-filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+// $shadow-filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
 
 .icon {
   width: $size;
   height: $size;
 
-  filter: $shadow-filter;
+  filter: drop-shadow(3px 0px 5px rgb(0 0 0 / 0.4));
   fill: white;
+
+  transition: all 0.3s;
+
+  &.elevate {
+    // focusing makes shadow more clear
+    filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+    transform: scale(1.03);
+  }
 }
