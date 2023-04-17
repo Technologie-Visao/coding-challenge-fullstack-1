@@ -42,3 +42,7 @@ Concernant l'architecture du projet, à chaque quelques lignes de code je pense 
 ou en séparant de longues classe/fonctions en plusieurs morceaux par exemple. 
 
 L'API est deployer aussi pour pouvoir tester le tout sur une single page sans perdre de temps.
+
+updat## Architecture
+
+![Alt Text](public/static/images/frontEnd-Architecture.png)

@@ -44,3 +44,8 @@ J'ai déjà beaucoup d'expérience avec Flask et Python donc ca s'est déroulé 
 Le projet a été fait avec toujours en tête une mentalité de bonne architecture, clean code et de scalability dans le temps. 
 J'ai donc utilisé des blueprints pour séparer les routes et comme vous pouvez le constater l'architecture du projet est très détaillé
 pour un si petit projet de manière à ce que ca soit facilement scalable et maintenable.
+
+
+## Architecture
+
+![Alt Text](app/static/images/backEnd-Architecture.png)
