@@ -1,4 +1,53 @@
 # Visao Coding Challenge
+
+## Steps performed
+- Setup local environment to run skeleton app (git, node & yarn modules required) +- 1h
+
+Backend
+- Create backend endpoint that returns the complete textures list 
+    (select and implement new framework, convert json => object => json) +- 2h
+- Weight, sort and filter textures +- 1h
+- Adds basic unit tests +- 30m
+
+FrontEnd 
+- Search inspiration and setup project from scratch
+- Setup Clean architecture, fetch and display textures as text +- 2h
+- Create autocomplete and texture components natively +- 4h
+- Misc improvements +- 1h
+
+## How to run
+Backend Setup using python with Falcon framework and waitress HTTP server (windows env)
+- Move to backend directoty
+- Install dependencies => 'pip install falcon falcon_params_verifier waitress'
+- Start server => 'py -m main_server' (localhost:9090)
+- Run unit tests => 'py -m unittest test_texture'
+
+Frontend Setup
+- Move to frontend directory
+- Install dependencies with 'npm install'
+- Run 'npm run dev' to start
+
+## Improvements/TODO
+- Unit tests in front for the clean archi
+- Route /textures to get all textures to cleanly populate the autocomplete component data
+- Input validation (just realized now while writing the feedback, lets say its not mandatory for this usecase :> )
+
+## Inspiration
+https://www.poliigon.com/textures
+
+## Closing comments
+I really enjoyed the exercise because it got me back into python and react and it's been a while.
+For that reason, I realise that I was not as efficient as I would have liked.
+To be honest, I spent most of the time doing research on how to implement stuff since I'm not that familiar with react.
+Yet, even though it took me some time and it has flows, I still like the result from a non-expert point of view, I felt like I learned quite fast.
+I know it's overkill but I wanted to try the clean architecture in react and it seems fine.
+Also I was not completely sure about the insctructions so I improvised and implemented two different flows:
+- Search component displays textures names on input in the search results
+- Call on input change displays suggestions based on searchTerm as Texture Component below the search component
+Overall I'd say it took me a bit over 12 hours but again, I spent more time searching and learning than implementing.
+
+---
+
 ## Instructions
 Design an API(backend) which serves suggestions of textures and a web page(frontend) 
 which includes an autocomplete component to search them.
@@ -64,27 +113,3 @@ Design an autocomplete component which and will show suggested textures
 - The list of suggestions should NOT show when the input is less than two characters.
 - Display a message when no suggestions are found
 - The design should be mobile friendly
-
-
-### Steps performed
-- Setup local environment to run skeleton app (git, node & yarn modules required) +- 1h
-
-Backend
-- Create backend endpoint that returns the complete textures list 
-    (select and implement new framework, convert json => object => json) +- 2h
-- Weight, sort and filter textures +- 1h
-- Adds basic unit tests +- 30m
-
-FrontEnd 
-- Search inspiration and setup project from scratch
-- Setup Clean architecture, fetch and display textures as text +- 2h
-
-### How to run
-Backend Setup using python with Falcon framework and waitress HTTP server (windows env)
-- 'pip install falcon falcon_params_verifier waitress'
-- Start server => 'py -m main_server' in backend directory (localhost:9090)
-- Run unit tests => '-m unittest test_texture'
-
-FrontEnd Setup
-- Install dependencies with 'npm install' from frontend folder
-- Run 'npm run dev' to start
