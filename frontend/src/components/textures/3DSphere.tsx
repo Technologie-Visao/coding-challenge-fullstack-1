@@ -1,4 +1,4 @@
-import { useLoader, useFrame } from '@react-three/fiber';
+import { useLoader } from '@react-three/fiber';
 import { OrbitControls, Environment } from '@react-three/drei';
 import { TextureLoader } from 'three/src/loaders/TextureLoader';
 import { Sphere3DProps } from '../../types/textures/card/3DTextureProps';

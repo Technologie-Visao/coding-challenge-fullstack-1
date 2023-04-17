@@ -57,7 +57,6 @@ test('displays "No suggestions found" message when no suggestion matches the sea
   const searchInput = screen.getByPlaceholderText('Search textures...');
   fireEvent.change(searchInput, { target: { value: 'xyz' } });
 
-  // Wait for the suggestions ScrollView to appear
   await waitFor(() => screen.getByTestId('suggestions'));
 
   const suggestionsList = screen.getByTestId('suggestions');

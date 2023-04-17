@@ -5,5 +5,6 @@ TEXTURE_URL = "https://static-dev.withpoly.com/v3-voronoi/textures/previews/2b9f
 TEXTURE_DESCRIPTION = 'First test description'
 UPDATED_TEXTURE_DESCRIPTION = 'Updated test description'
 
+
 def insert_texture(client, texture: Texture):
     return client.post('/textures/insert', json=texture.to_dict())
