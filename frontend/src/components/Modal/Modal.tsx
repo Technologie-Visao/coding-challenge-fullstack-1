@@ -8,7 +8,7 @@ function Modal(props: any) {
   return (
     <div className="autocomplete-modal-overlay">
       <div className="autocomplete-modal-content">
-        <h3>{props.suggestion.name}</h3>
+        <h1 className="autocomplete-modal-title">{props.suggestion.name}</h1>
         <img
           className="autocomplete-modal-thumbnail"
           src={props.suggestion.thumbnail_url}

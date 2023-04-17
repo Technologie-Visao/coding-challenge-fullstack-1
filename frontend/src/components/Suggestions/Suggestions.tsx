@@ -1,25 +1,33 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import axios from 'axios';
 import './Suggestions.css';
 import { Modal } from '../Modal';
+import {
+  SearchTermContext,
+  SuggestionContext,
+  LimitContext,
+} from '../../hooks/';
 
-function Suggestions(props: any) {
+function Suggestions() {
+  const { term } = useContext(SearchTermContext);
+  const { suggestions, changeSuggestions } = useContext(SuggestionContext);
+  const { limit } = useContext(LimitContext);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modalContent, setModalContent] = useState(props.suggestions[0]);
+  const [modalContent, setModalContent] = useState(suggestions[0]);
 
   useEffect(() => {
-    if (props.searchTerm.length < 2) {
-      props.changeSuggestions([]);
+    if (term.length < 2) {
+      changeSuggestions([]);
       return;
     }
     const fetchSuggestions = async () => {
       const response = await axios.get(
-        `http://localhost:5000/textures/suggestions?search_term=${props.searchTerm}&limit=${props.limit}`,
+        `http://localhost:5000/textures/suggestions?search_term=${term}&limit=${limit}`,
       );
-      props.changeSuggestions(response.data);
+      changeSuggestions(response.data);
     };
     fetchSuggestions();
-  }, [props.searchTerm]);
+  }, [term, limit]);
 
   const handleOpenModal = (suggestion: any) => {
     setIsModalOpen(true);
@@ -29,7 +37,7 @@ function Suggestions(props: any) {
   return (
     <div className="autocomplete-suggestions-wrapper">
       <ul className="autocomplete-suggestions">
-        {props.suggestions.map((suggestion: any) => (
+        {suggestions.map((suggestion: any) => (
           <li
             className="autocomplete-suggestion"
             key={suggestion.name}
@@ -46,7 +54,7 @@ function Suggestions(props: any) {
             </div>
           </li>
         ))}
-        {props.suggestions.length === 0 && (
+        {suggestions.length === 0 && (
           <li className="autocomplete-no-suggestions">No suggestions found.</li>
         )}
       </ul>

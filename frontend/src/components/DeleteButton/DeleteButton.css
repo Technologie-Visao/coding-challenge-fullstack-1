@@ -1,0 +1,18 @@
+.delete-button {
+  display: flex;
+  align-self: flex-end;
+  margin-right: 10%;
+  background-color: #fb8500 !important;
+  color: white;
+  font-weight: bold;
+  border: 2px solid black;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  button {
+    margin-right: 0 !important;
+  }
+}

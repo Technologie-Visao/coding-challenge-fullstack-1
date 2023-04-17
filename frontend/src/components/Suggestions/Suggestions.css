@@ -16,6 +16,7 @@
   border-radius: 0 0 5px 5px;
   overflow: scroll;
   overflow-x: hidden;
+  background-color: white;
 }
 
 ul {
@@ -48,53 +49,11 @@ li {
   padding: 10px;
 }
 
-.autocomplete-modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.autocomplete-modal-content {
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  width: 45%;
-  height: 50%;
-  text-align: center;
-  border: 3px solid rgba(0, 0, 0, 0.6);
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: space-around;
-}
-
-.autocomplete-modal-thumbnail {
-  width: 150px;
-  height: 150px;
-}
-
-.autocomplete-modal-information {
-  width: 100%;
-  text-align: center;
-}
-
-.autocomplete-modal-button {
-  border: 1px solid;
-}
-
-/* Style the scrollbar track */
 ::-webkit-scrollbar {
-  background-color: transparent; /* Transparent background */
+  background-color: transparent;
   width: 20px;
 }
 
-/* Style the scrollbar thumb */
 ::-webkit-scrollbar-thumb {
   border-right: 5px solid transparent;
   border-left: 5px solid transparent;
@@ -119,12 +78,5 @@ li {
     width: 100%;
     margin-left: 1em;
     text-align: left;
-  }
-
-  .autocomplete-modal-content {
-    border-radius: 10px;
-    width: 65%;
-    height: 50%;
-    text-align: center;
   }
 }

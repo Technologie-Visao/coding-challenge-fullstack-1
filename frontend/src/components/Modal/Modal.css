@@ -1,0 +1,74 @@
+.autocomplete-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.autocomplete-modal-content {
+  background-color: #edf2fb;
+  padding: 20px;
+  border-radius: 10px;
+  width: 45%;
+  height: 50%;
+  text-align: center;
+  border: 3px solid rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.autocomplete-modal-title {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.autocomplete-modal-thumbnail {
+  width: 220px;
+  height: 220px;
+  padding: 2%;
+  border: 2px solid black;
+  border-radius: 20px;
+  background-color: white;
+}
+
+.autocomplete-modal-information {
+  width: 60%;
+  text-align: center;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 20px;
+}
+
+.autocomplete-modal-button {
+  border: 1px solid;
+}
+
+@media only screen and (max-width: 768px) {
+  .autocomplete-modal-content {
+    border-radius: 10px;
+    width: 65%;
+    height: 50%;
+    text-align: center;
+  }
+
+  .autocomplete-modal-title {
+    font-size: 2.2rem;
+    margin: 0;
+  }
+
+  .autocomplete-modal-thumbnail {
+    width: 140px;
+    height: 140px;
+  }
+
+  .autocomplete-modal-information {
+    width: 100%;
+  }
+}
