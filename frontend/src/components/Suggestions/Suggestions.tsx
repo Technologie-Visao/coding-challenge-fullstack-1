@@ -1,8 +1,11 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import './Suggestions.css';
 
 function Suggestion(props: any) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalContent, setModalContent] = useState(props.suggestions[0]);
+
   useEffect(() => {
     if (props.searchTerm.length < 2) {
       props.changeSuggestions([]);
@@ -17,9 +20,13 @@ function Suggestion(props: any) {
     fetchSuggestions();
   }, [props.searchTerm]);
 
-  const handleSuggestionClick = (suggestion: any) => {
-    props.changeSearchTerm(suggestion.name);
-    props.changeSuggestions([]);
+  const handleOpenModal = (suggestion: any) => {
+    setIsModalOpen(true);
+    setModalContent(suggestion);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
   };
 
   return (
@@ -29,7 +36,7 @@ function Suggestion(props: any) {
           <li
             className="autocomplete-suggestion"
             key={suggestion.name}
-            onClick={() => handleSuggestionClick(suggestion)}
+            onClick={() => handleOpenModal(suggestion)}
           >
             <img
               className="autocomplete-suggestion-thumbnail"
@@ -46,6 +53,27 @@ function Suggestion(props: any) {
           <li className="autocomplete-no-suggestions">No suggestions found.</li>
         )}
       </ul>
+      {isModalOpen && (
+        <div className="autocomplete-modal-overlay">
+          <div className="autocomplete-modal-content">
+            <h3>{modalContent.name}</h3>
+            <img
+              className="autocomplete-modal-thumbnail"
+              src={modalContent.thumbnail_url}
+              alt={modalContent.name}
+            />
+            <div className="autocomplete-modal-information">
+              <p>{modalContent.description}</p>
+            </div>
+            <button
+              className="autocomplete-modal-button"
+              onClick={handleCloseModal}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
