@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import './Suggestions.css';
+import { Modal } from '../Modal';
 
-function Suggestion(props: any) {
+function Suggestions(props: any) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState(props.suggestions[0]);
 
@@ -23,10 +24,6 @@ function Suggestion(props: any) {
   const handleOpenModal = (suggestion: any) => {
     setIsModalOpen(true);
     setModalContent(suggestion);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
   };
 
   return (
@@ -54,28 +51,10 @@ function Suggestion(props: any) {
         )}
       </ul>
       {isModalOpen && (
-        <div className="autocomplete-modal-overlay">
-          <div className="autocomplete-modal-content">
-            <h3>{modalContent.name}</h3>
-            <img
-              className="autocomplete-modal-thumbnail"
-              src={modalContent.thumbnail_url}
-              alt={modalContent.name}
-            />
-            <div className="autocomplete-modal-information">
-              <p>{modalContent.description}</p>
-            </div>
-            <button
-              className="autocomplete-modal-button"
-              onClick={handleCloseModal}
-            >
-              Close
-            </button>
-          </div>
-        </div>
+        <Modal suggestion={modalContent} closeModal={setIsModalOpen} />
       )}
     </div>
   );
 }
 
-export default Suggestion;
+export default Suggestions;
