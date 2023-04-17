@@ -42,8 +42,9 @@ To be honest, I spent most of the time doing research on how to implement stuff 
 Yet, even though it took me some time and it has flows, I still like the result from a non-expert point of view, I felt like I learned quite fast.
 I know it's overkill but I wanted to try the clean architecture in react and it seems fine.
 Also I was not completely sure about the insctructions so I improvised and implemented two different flows:
-- Search component displays textures names on input in the search results
-- Call on input change displays suggestions based on searchTerm as Texture Component below the search component
+- Search component displays textures names on input in the search results.
+- Call on input change displays suggestions based on searchTerm as Texture Component below the search component.
+
 Overall I'd say it took me a bit over 12 hours but again, I spent more time searching and learning than implementing.
 
 ---
