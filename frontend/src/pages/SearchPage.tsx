@@ -52,6 +52,7 @@ const AutocompleteComponent: React.FC = () => {
       setSuggestions(filtered);
     } else {
       setSuggestions([]);
+      setItems(Originalitems);
     }
   };
 
