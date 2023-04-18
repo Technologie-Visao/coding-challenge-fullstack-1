@@ -15,10 +15,14 @@ def get_texture_suggestions():
 
     # Calculate score for each texture based on how well it matches search term
     for texture in textures:
+        name = texture['name'].lower()
+        description = texture['description'].lower()
+        description_words = description.split(' ')
+        search_term = search_term.lower()
         score = 0
-        if search_term in texture['name']:
+        if search_term in name or name in search_term:
             score += 1
-        if search_term in texture['description']:
+        if search_term in description_words:
             score += 0.5
         texture['score'] = score
 
