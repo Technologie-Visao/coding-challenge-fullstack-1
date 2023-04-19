@@ -50,15 +50,17 @@ const Autocomplete: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className='autocomplete-container'>
       <div>
-        <input type="text" value={searchTerm} onChange={handleInputChange} />
+        <div>
+        <input className='autocomplete-input' type="text" value={searchTerm} onChange={handleInputChange} />
+        </div>
         <span>Limit: </span>
         <input type="text" value={limit} onChange={handleLimitChange} />
       </div>
 
       {suggestions.length > 0 && (
-        <ul>
+        <ul className='autocomplete-suggestions'>
           {suggestions.map((texture, index) => (
             <li
               key={texture.name}
@@ -70,7 +72,7 @@ const Autocomplete: React.FC = () => {
               }}
             >
               <img src={texture.thumbnail_url} alt={texture.name} />
-              <div>
+              <div >
                 <div>{texture.name}</div>
                 <div>{texture.description}</div>
               </div>
