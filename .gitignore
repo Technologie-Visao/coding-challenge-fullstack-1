@@ -28,3 +28,6 @@ Temporary Items
 
 # VSCode files
 .vscode/
+
+backend/node_modules
+fontend/node_modules
