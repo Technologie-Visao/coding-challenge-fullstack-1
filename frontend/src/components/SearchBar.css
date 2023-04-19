@@ -4,6 +4,7 @@
   align-items: center;
   font-family: Arial, sans-serif;
   margin: 20px;
+  height: 100vh;
 }
 
 .autocomplete-input {
