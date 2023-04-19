@@ -14,6 +14,13 @@
   margin-right: 10px;
   width: 300px;
 }
+.limit {
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 20px;
+}
 
 .autocomplete-input:focus {
   outline: none;
@@ -24,7 +31,6 @@
   padding: 0;
   margin: 0;
   width: 400px;
-  /* border: solid 1px red; */
 }
 
 .autocomplete-suggestions li {
@@ -56,7 +62,10 @@
 
 .autocomplete-suggestions div:last-child {
   font-size: 14px;
-  color: #888;
+  color: #757373;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .autocomplete-suggestions li:not(:last-child) {
@@ -65,6 +74,20 @@
 
 .autocomplete-no-suggestions {
   font-size: 16px;
-  color: #888;
+  color: #757373;
   margin-top: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  .autocomplete-input {
+    width: 100%;
+    max-width: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .autocomplete-suggestions {
+    width: 100%;
+    max-width: 100%;
+  }
 }

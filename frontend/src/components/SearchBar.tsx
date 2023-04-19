@@ -42,25 +42,35 @@ const Autocomplete: React.FC = () => {
   };
 
   const handleSuggestionClick = (texture: Texture) => {
-    window.alert(texture.name);
+    window.alert(`Name: ${texture.name}\nDescription: ${texture.description}`);
   };
 
   const handleKeyDown = (texture: Texture) => {
-    window.alert(texture.name);
+    window.alert(`Name: ${texture.name}\nDescription: ${texture.description}`);
   };
 
   return (
-    <div className='autocomplete-container'>
+    <div className="autocomplete-container">
       <div>
         <div>
-        <input className='autocomplete-input' type="text" value={searchTerm} onChange={handleInputChange} />
+          <input
+            className="autocomplete-input"
+            type="text"
+            value={searchTerm}
+            onChange={handleInputChange}
+          />
         </div>
-        <span>Limit: </span>
-        <input type="text" value={limit} onChange={handleLimitChange} />
+        <span>Limit of suggestions: </span>
+        <input
+          className="limit"
+          type="text"
+          value={limit}
+          onChange={handleLimitChange}
+        />
       </div>
 
       {suggestions.length > 0 && (
-        <ul className='autocomplete-suggestions'>
+        <ul className="autocomplete-suggestions">
           {suggestions.map((texture, index) => (
             <li
               key={texture.name}
@@ -70,11 +80,12 @@ const Autocomplete: React.FC = () => {
                   handleKeyDown(texture);
                 }
               }}
+              tabIndex={0}
             >
               <img src={texture.thumbnail_url} alt={texture.name} />
-              <div >
+              <div>
                 <div>{texture.name}</div>
-                <div>{texture.description}</div>
+                <div>{texture.description.slice(0, 50)}...</div>
               </div>
             </li>
           ))}
